@@ -1,0 +1,52 @@
+{
+  "name": "full-react-snippets",
+  "displayName": "Full React/React Native/Redux snippets",
+  "description": "Code snippets for React/React Native/Redux",
+  "version": "1.0.0",
+  "icon": "images/logo.png",
+  "publisher": "Walter Ribeiro",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/walteribeiro/full-react-snippets"
+  },
+  "bugs": {
+    "url": "https://github.com/walteribeiro/full-react-snippets/issues"
+  },
+  "engines": {
+    "vscode": "^1.12.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "keywords": [
+    "snippets",
+    "react",
+    "react-native",
+    "javascript",
+    "redux"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "jsx",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  }
+}

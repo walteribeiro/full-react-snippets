@@ -1,0 +1,273 @@
+{
+  "Import react": {
+    "prefix": "imr",
+    "body": [
+      "import React from 'react'"
+    ],
+    "description": "Import react"
+  },
+  "Import react component": {
+    "prefix": "imrc",
+    "body": [
+      "import React, { Component } from 'react'"
+    ],
+    "description": "Import react component"
+  },
+  "Import React-Native Element": {
+    "prefix": "imrn",
+    "body": "import { $1 } from 'react-native'",
+    "description": "Import React-Native Element"
+  },
+  "Import Styled-Components": {
+    "prefix": "ims",
+    "body": "import styled from 'styled-components'",
+    "description": "Import Styled-Components"
+  },
+  "Import Styled-Components Native": {
+    "prefix": "imsn",
+    "body": "import styled from 'styled-components/native'",
+    "description": "Import Styled-Components"
+  },
+  "Redux constant": {
+    "prefix": "rct",
+    "body": "export const $1 = '$1'"
+  },
+  "Print to console": {
+    "prefix": "cl",
+    "body": [
+      "console.log($1)"
+    ],
+    "description": "Log output to console"
+  },
+  "Export default": {
+    "prefix": "ed",
+    "body": [
+      "export default $1"
+    ],
+    "description": "Export default"
+  },
+  "EslintDisableLine": {
+    "prefix": "edl",
+    "body": "// eslint-disable-line",
+    "description": "Eslint Disable Line"
+  },
+  "Comment Block": {
+    "prefix": "cm",
+    "body": [
+      "/**",
+      " * ${1}",
+      " */"
+    ]
+  },
+  "Stateless Component": {
+    "prefix": "sl",
+    "body": [
+      "const $1 = () => (",
+      "\t$2",
+      ")",
+      "",
+      "export default $1"
+    ]
+  },
+  "Redux Reducer": {
+    "prefix": "rrd",
+    "body": [
+      "export default (state = $1, action) => {",
+      "\tswitch (action.type) {",
+      "\t\tcase $2:",
+      "\t\t\t$3",
+      "\t\tdefault:",
+      "\t\t\treturn state",
+      "\t}",
+      "}"
+    ]
+  },
+  "Redux Pure Function": {
+    "prefix": "rpf",
+    "body": [
+      "export const $1 = '$1'",
+      "",
+      "export function $2($3) {",
+      "\treturn {",
+      "\t\ttype: $1,",
+      "\t\t$3",
+      "\t}",
+      "}"
+    ]
+  },
+  "Redux Pure Function Const": {
+    "prefix": "rpc",
+    "body": [
+      "export const $1 = '$1'",
+      "",
+      "export const $2 = $3 => ({",
+      "\ttype: $1,",
+      "\t$3",
+      "})"
+    ]
+  },
+  "Comment Big Block": {
+    "prefix": "cmmb",
+    "body": [
+      "/**",
+      "|--------------------------------------------------",
+      "| $1",
+      "|--------------------------------------------------",
+      "*/"
+    ]
+  },
+  "ComponentWillMount": {
+    "prefix": "cwm",
+    "body": [
+      "componentWillMount() {",
+      "\t$1",
+      "}"
+    ]
+  },
+  "ComponentWillUpdate": {
+    "prefix": "cwu",
+    "body": [
+      "componentWillUpdate() {",
+      "\t$1",
+      "}"
+    ]
+  },
+  "ComponentDidUpdate": {
+    "prefix": "cdu",
+    "body": [
+      "componentDidUpdate(prevProps, prevState) {",
+      "\t$1",
+      "}"
+    ]
+  },
+  "ComponentWillReceiveProps": {
+    "prefix": "cwrp",
+    "body": [
+      "componentWillReceiveProps(nextProps) {",
+      "\t$1",
+      "}"
+    ]
+  },
+  "Comment big line": {
+    "prefix": "cbl",
+    "body": "// ============================================================"
+  },
+  "Component Class": {
+    "prefix": "ccs",
+    "body": [
+      "class $1 extends Component {",
+      "\tstate = { $2 }",
+      "\trender() {",
+      "\t\treturn (",
+      "\t\t\t$3",
+      "\t\t)",
+      "\t}",
+      "}",
+      "",
+      "export default $1"
+    ]
+  },
+  "Export default Component Class": {
+    "prefix": "edccs",
+    "body": [
+      "export default class $1 extends Component {",
+      "\tstate = { $2 }",
+      "\trender() {",
+      "\t\treturn (",
+      "\t\t\t$3",
+      "\t\t)",
+      "\t}",
+      "}"
+    ]
+  },
+  "Connect Redux": {
+    "prefix": "crr",
+    "body": "import { connect } from 'react-redux'"
+  },
+  "ComponentDidMount": {
+    "prefix": "cdm",
+    "body": [
+      "componentDidMount() {",
+      "\t$1",
+      "}"
+    ]
+  },
+  "EStyleSheet Style": {
+    "prefix": "ess",
+    "body": [
+      "import EStyleSheet from 'react-native-extended-stylesheet'",
+      "",
+      "const styles = EStyleSheet.create({",
+      "\t$1",
+      "})",
+      "",
+      "export default styles"
+    ]
+  },
+  "Stateless Component Function": {
+    "prefix": "slc",
+    "body": [
+      "function $1($2) {",
+      "\t$3",
+      "}",
+      "",
+      "export default $1"
+    ]
+  },
+  "Styled Component": {
+    "prefix": "styc",
+    "body": [
+      "const $1 = styled.$2`",
+      "\t$3",
+      "`"
+    ]
+  },
+  "Export Styled Component": {
+    "prefix": "estyc",
+    "body": [
+      "export const $1 = styled.$2`",
+      "\t$3",
+      "`"
+    ]
+  },
+  "Export default Styled Component": {
+    "prefix": "edstyc",
+    "body": [
+      "export default styled.$1`",
+      "\t$2",
+      "`"
+    ]
+  },
+  "ComponentWillUnmount": {
+    "prefix": "cwum",
+    "body": [
+      "componentWillUnmount() {",
+      "\t$1",
+      "}"
+    ]
+  },
+  "Console Log": {
+    "prefix": "log",
+    "body": [
+      "console.log('====================================')",
+      "console.log($1)",
+      "console.log('====================================')"
+    ]
+  },
+  "Test Describe": {
+		"prefix": "tdesc",
+		"body": [
+			"describe('$1', () => {",
+			"\t$2",
+			"})"
+		]
+	},
+	"Test it": {
+		"prefix": "tit",
+		"body": [
+			"it('should $1', $2($3) => {",
+			"\t$4",
+			"})"
+		]
+	}
+}
