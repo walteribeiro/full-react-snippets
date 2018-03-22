@@ -1,0 +1,77 @@
+{
+  "React Native Component": {
+    "prefix": "rnc",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import { Text, View } from 'react-native'",
+      "",
+      "export default class ${1:componentName} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    )",
+      "  }",
+      "}"
+    ]
+  },
+  "React Native Component Export": {
+    "prefix": "rnce",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import { Text, View } from 'react-native'",
+      "",
+      "export class ${1:componentName} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "export default ${1:componentName}"
+    ]
+  },
+  "React Native Class Component Redux": {
+    "prefix": "rncredux",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import { View, Text } from 'react-native'",
+      "import PropTypes from 'prop-types'",
+      "import { connect } from 'react-redux'",
+      "",
+      "export class ${1:componentName} extends Component {",
+      "  static propTypes = {",
+      "    ${2:prop}: ${3:PropTypes}",
+      "  }",
+      "",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "const mapStateToProps = (state) => ({",
+      "  ",
+      "})",
+      "",
+      "const mapDispatchToProps = {",
+      "  ",
+      "}",
+      "",
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:componentName})",
+      ""
+    ],
+    "description": "Creates a React Native component class with PropTypes with connected redux and ES7 module system"
+  },
+  "React Native Import": {
+    "prefix": "imrn",
+    "body": "import { ${1:moduleName} } from 'react-native'"
+  }
+}

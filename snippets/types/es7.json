@@ -1,0 +1,239 @@
+{
+  "Eslint Disable Line": {
+    "prefix": "edl",
+    "body": "// eslint-disable-line",
+    "description": "Eslint Disable Line"
+  },
+  "Import Statement": {
+    "prefix": "imst",
+    "body": [
+      "import { ${2:moduleName} } from '${1:module}'$0"
+    ],
+    "description": "Import Statement"
+  },
+  "Import": {
+    "prefix": "imp",
+    "body": "import ${2:moduleName} from '${1:module}'$0"
+  },
+  "Import No Module Name": {
+    "prefix": "imn",
+    "body": "import '${1:module}'$0"
+  },
+  "Import Everything": {
+    "prefix": "ime",
+    "body": "import * as ${2:alias} from '${1:module}'$0"
+  },
+  "Import As": {
+    "prefix": "ima",
+    "body": "import { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
+  },
+  "Export Default": {
+    "prefix": "ed",
+    "body": "export default $1$0"
+  },
+  "Export Destructing": {
+    "prefix": "exd",
+    "body": "export { $2 } from '${1:module}'$0"
+  },
+  "Export As": {
+    "prefix": "exa",
+    "body": "export { ${2:originalName} as ${3:alias} } from '${1:module}'$0"
+  },
+  "Export Named Function": {
+    "prefix": "enf",
+    "body": [
+      "export const ${1:functionName} = (${2:params}) => {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Export named function in ES7 syntax"
+  },
+  "Export Default Function": {
+    "prefix": "edf",
+    "body": [
+      "export default (${1:params}) => {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Export default function in ES7 syntax"
+  },
+  "Method": {
+    "prefix": "met",
+    "body": [
+      "${1:methodName} = (${2:params}) => {",
+      "  ${0}",
+      "}",
+      ""
+    ],
+    "description": "Creates a method inside a class in ES7 syntax"
+  },
+  "For Each": {
+    "prefix": "fre",
+    "body": [
+      "${1:array}.forEach(${2:currentItem} => {",
+      "  ${0}",
+      "})",
+      ""
+    ],
+    "description": "Creates a forEach statement in ES7 syntax"
+  },
+  "For Of": {
+    "prefix": "fof",
+    "body": [
+      "for(let ${1:item} of ${2:object}) {",
+      "  ${0}",
+      "}",
+      ""
+    ],
+    "description": "Iterating over property names of iterable objects"
+  },
+  "For In": {
+    "prefix": "fin",
+    "body": [
+      "for(let ${1:item} in ${2:object}) {",
+      "  ${0}",
+      "}",
+      ""
+    ],
+    "description": "Iterating over property values of iterable objects"
+  },
+  "Anonymous Function": {
+    "prefix": "anfn",
+    "body": [
+      "(${1:params}) => {",
+      "  ${2}",
+      "}",
+      ""
+    ],
+    "description": "Creates an anonymous function in ES7 syntax"
+  },
+  "Named Function": {
+    "prefix": "nfn",
+    "body": [
+      "const ${1:name} = (${2:params}) => {",
+      "  ${3}",
+      "}",
+      ""
+    ],
+    "description": "Creates a named function in ES7 syntax"
+  },
+  "Destructing Object": {
+    "prefix": "dob",
+    "body": "const {${1:propertyName}} = ${2:objectToDestruct}",
+    "description": "Creates and assigns a local variable using object destructing"
+  },
+  "Destructing Array": {
+    "prefix": "dar",
+    "body": "const [${1:propertyName}] = ${2:arrayToDestruct}",
+    "description": "Creates and assigns a local variable using array destructing"
+  },
+  "Set Interval": {
+    "prefix": "sti",
+    "body": [
+      "setInterval(() => {",
+      "  ${2}",
+      "}, ${0:intervalInms})",
+      ""
+    ],
+    "description": "Executes the given function at specified intervals in ES7 syntax"
+  },
+  "Set TimeOut": {
+    "prefix": "sto",
+    "body": [
+      "setTimeout(() => {",
+      "  ${2}",
+      "}, ${1:delayInms})",
+      ""
+    ],
+    "description": "Executes the given function after the specified delay in ES7 syntax"
+  },
+  "Promise": {
+    "prefix": "prom",
+    "body": [
+      "return new Promise((resolve, reject) => {",
+      "  ${1}",
+      "})",
+      ""
+    ],
+    "description": "Creates and returns a new Promise in the standard ES7 syntax"
+  },
+  "Console Assert": {
+    "prefix": "cas",
+    "body": "console.assert(${1:expression}, ${2:object})",
+    "description": "If the specified expression is false, the message is written to the console along with a stack trace"
+  },
+  "Console Clear": {
+    "prefix": "ccl",
+    "body": "console.clear()",
+    "description": "Clears the console"
+  },
+  "Console Count": {
+    "prefix": "cco",
+    "body": "console.count(${1:label})",
+    "description": "Writes the the number of times that count() has been invoked at the same line and with the same label"
+  },
+  "Console Dir": {
+    "prefix": "cdi",
+    "body": "console.dir(${1:object})",
+    "description": "Prints a JavaScript representation of the specified object"
+  },
+  "Console Error": {
+    "prefix": "cer",
+    "body": "console.error(${1:object})",
+    "description": "Displays a message in the console and also includes a stack trace from where the method was called"
+  },
+  "Console Group": {
+    "prefix": "cgr",
+    "body": "console.group(\"${1:label}\")",
+    "description": "Groups and indents all following output by an additional level, until console.groupEnd() is called."
+  },
+  "Console Group End": {
+    "prefix": "cge",
+    "body": "console.groupEnd()",
+    "description": "Closes out the corresponding console.group()."
+  },
+  "Console Log": {
+    "prefix": "clg",
+    "body": "console.log(${1:object})",
+    "description": "Displays a message in the console"
+  },
+  "Console Trace": {
+    "prefix": "ctr",
+    "body": "console.trace(${1:object})",
+    "description": "Prints a stack trace from the point where the method was called"
+  },
+  "Console Warn": {
+    "prefix": "cwa",
+    "body": "console.warn(${1:object})",
+    "description": "Displays a message in the console but also displays a yellow warning icon along with the logged message"
+  },
+  "Console Info": {
+    "prefix": "cin",
+    "body": "console.info(${1:object})",
+    "description": "Displays a message in the console but also displays a blue information icon along with the logged message"
+  },
+  "Comment Block": {
+    "prefix": "cm",
+    "body": [
+      "/**",
+      " * ${1}",
+      " */"
+    ]
+  },
+  "Comment Big Block": {
+    "prefix": "cmmb",
+    "body": [
+      "/**",
+      "|--------------------------------------------------",
+      "| $1",
+      "|--------------------------------------------------",
+      "*/"
+    ]
+  },
+  "Comment Big Line": {
+    "prefix": "cbl",
+    "body": "// ============================================================"
+  }
+}

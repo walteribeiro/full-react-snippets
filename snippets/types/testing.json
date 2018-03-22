@@ -1,0 +1,108 @@
+{
+  "Describe Block": {
+    "prefix": "desc",
+    "body": ["describe('$1', () => {", "  $0", "})", ""],
+    "description": "Testing `describe` block"
+  },
+  "Test Block": {
+    "prefix": "test",
+    "body": ["test('should $1', () => {", "  $0", "})", ""],
+    "description": "Testing `test` block"
+  },
+  "It Block": {
+    "prefix": "tit",
+    "body": ["it('should $1', () => {", "  $0", "})", ""],
+    "description": "Testing `it` block"
+  },
+  "Setup Test": {
+    "prefix": "stest",
+    "body": [
+      "import { ${1:ComponentName}, mapStateToProps, mapDispatchToProps } from '../${1:ComponentName}'",
+      "",
+      "describe('<${1:ComponentName} />', () => {",
+      "  const defaultProps = {",
+      "",
+      "  }",
+      "",
+      "  const setup = buildSetup(${1:ComponentName}, defaultProps)",
+      "",
+      "  test('render', () => {",
+      "    expect(setup().wrapper).toMatchSnapshot()",
+      "  })",
+      "})",
+      ""
+    ]
+  },
+  "Setup Test With Enzyme To Json": {
+    "prefix": "sjtest",
+    "body": [
+      "import toJson from 'enzyme-to-json'",
+      "import { ${1:ComponentName}, mapStateToProps, mapDispatchToProps } from '../${1:ComponentName}'",
+      "",
+      "describe('<${1:ComponentName} />', () => {",
+      "  const defaultProps = {",
+      "",
+      "  }",
+      "",
+      "  const setup = buildSetup(${1:ComponentName}, defaultProps)",
+      "",
+      "  test('render', () => {",
+      "    expect(toJson(setup().wrapper)).toMatchSnapshot()",
+      "  })",
+      "})",
+      ""
+    ]
+  },
+  "Setup React Native Test": {
+    "prefix": "sntest",
+    "body": [
+      "import 'react-native'",
+      "import React from 'react'",
+      "import renderer from 'react-test-renderer'",
+      "",
+      "import ${1:ComponentName} from '../${1:ComponentName}'",
+      "",
+      "describe('<${1:ComponentName} />', () => {",
+      "  const defaultProps = {",
+      "",
+      "  }",
+      "",
+      "  const wrapper = renderer.create(<${1:ComponentName} {...defaultProps} />)",
+      "",
+      "  test('render', () => {",
+      "    expect(wrapper).toMatchSnapshot()",
+      "  })",
+      "})",
+      ""
+    ]
+  },
+  "Setup React Native Test With Redux": {
+    "prefix": "snrtest",
+    "body": [
+      "import 'react-native'",
+      "import React from 'react'",
+      "import renderer from 'react-test-renderer'",
+      "import { Provider } from 'react-redux'",
+      "",
+      "import store from 'src/store/configureStore'",
+      "import ${1:ComponentName} from '../${1:ComponentName}'",
+      "",
+      "describe('<${1:ComponentName} />', () => {",
+      "  const defaultProps = {",
+      "",
+      "  }",
+      "",
+      "  const wrapper = renderer.create(",
+      "    <Provider store={store}>",
+      "      <${1:ComponentName} {...defaultProps} />",
+      "    </Provider>,",
+      "  )",
+      "",
+      "  test('render', () => {",
+      "    expect(wrapper).toMatchSnapshot()",
+      "  })",
+      "})",
+      ""
+    ]
+  }
+}

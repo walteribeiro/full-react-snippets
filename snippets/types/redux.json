@@ -1,0 +1,121 @@
+{
+  "Import Redux Statement": {
+    "prefix": "redux",
+    "body": ["import { connect } from 'react-redux'", ""]
+  },
+  "Redux Pure Function": {
+    "prefix": "rpf",
+    "body": [
+      "export const $1 = '$1'",
+      "",
+      "export function $2($3) {",
+      "\treturn {",
+      "\t\ttype: $1,",
+      "\t\t$3",
+      "\t}",
+      "}"
+    ]
+  },
+  "Redux Pure Function Const": {
+    "prefix": "rpc",
+    "body": [
+      "export const $1 = '$1'",
+      "",
+      "export const $2 = $3 => ({",
+      "\ttype: $1,",
+      "\t$3",
+      "})"
+    ]
+  },
+  "React Class Compoment Redux": {
+    "prefix": "rcredux",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import PropTypes from 'prop-types'",
+      "import { connect } from 'react-redux'",
+      "",
+      "export class ${1:componentName} extends Component {",
+      "  static propTypes = {",
+      "    ${2:prop}: ${3:PropTypes}",
+      "  }",
+      "",
+      "  render() {",
+      "    return (",
+      "      <div>",
+      "        $0",
+      "      </div>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "const mapStateToProps = (state) => ({",
+      "  ",
+      "})",
+      "",
+      "const mapDispatchToProps = {",
+      "  ",
+      "}",
+      "",
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:componentName})",
+      ""
+    ],
+    "description":
+      "Creates a React component class with PropTypes with connected redux and ES7 module system"
+  },
+  "Mapping To Props": {
+    "prefix": "reduxmap",
+    "body": [
+      "const mapStateToProps = (state) => ({",
+      "  ${1}",
+      "})",
+      "",
+      "const mapDispatchToProps = {",
+      "  ",
+      "}",
+      ""
+    ]
+  },
+  "Redux Action": {
+    "prefix": "rxaction",
+    "body": [
+      "export const ${1:actionName} = (${2:param}) => ({",
+      "  type: ${3:type},",
+      "  payload: ${4:payload}",
+      "})",
+      ""
+    ]
+  },
+  "Redux Const": {
+    "prefix": "rxconst",
+    "body": "export const ${1:constantName} = '${1:constantName}'"
+  },
+  "Redux Reducer": {
+    "prefix": "rxreducer",
+    "body": [
+      "const initialState = {",
+      "",
+      "}",
+      "",
+      "export default (state = initialState, action) => {",
+      "  switch (action.type) {",
+      "",
+      "  case ${1:typeName}:",
+      "    return { ...state }",
+      "",
+      "  default:",
+      "    return state",
+      "  }",
+      "}",
+      ""
+    ]
+  },
+  "Redux Selector": {
+    "prefix": "rxselect",
+    "body": [
+      "import { createSelector } from 'reselect'",
+      "",
+      "export const ${1:selectorName} = state => state.${2:selector}",
+      ""
+    ]
+  }
+}
