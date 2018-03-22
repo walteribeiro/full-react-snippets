@@ -1,3 +1,6 @@
+[![Version](http://vsmarketplacebadge.apphb.com/version-short/walter-ribeiro.full-react-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=walter-ribeiro.full-react-snippets)
+[![Install](http://vsmarketplacebadge.apphb.com/installs-short/walter-ribeiro.full-react-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=walter-ribeiro.full-react-snippets)
+[![Ratings](http://vsmarketplacebadge.apphb.com/rating-short/walter-ribeiro.full-react-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=walter-ribeiro.full-react-snippets)
 
 ## Usage
 
