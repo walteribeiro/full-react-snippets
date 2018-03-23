@@ -20,15 +20,10 @@
   ],
   "keywords": [
     "snippets",
-    "javascript",
-    "react",
-    "react-native",
+    "react/react-native",
     "react-router",
     "redux",
-    "GrapQL",
-    "es7",
-    "testing",
-    "PropTypes"
+    "GrapQL"
   ],
   "contributes": {
     "snippets": [

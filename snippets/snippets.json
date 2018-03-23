@@ -1,4 +1,61 @@
 {
+  "GraphQL For Component": {
+    "prefix": "graphql",
+    "body": ["import { compose, graphql } from 'react-apollo'", ""]
+  },
+  "Export GraphQL": {
+    "prefix": "expgql",
+    "body": [
+      "export default compose(",
+      "  graphql(${1:queryOrMutation}, { name: ${2:name} }),",
+      ")(${3:ComponentName})"
+    ]
+  },
+  "HOC With Redux": {
+    "prefix": "hocredux",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "import { connect } from 'react-redux'",
+      "",
+      "export const mapStateToProps = state => ({",
+      "",
+      "})",
+      "",
+      "export const mapDispatchToProps = {",
+      " ",
+      "}",
+      "",
+      "export const ${1:hocComponentName} = (WrappedComponent) => {",
+      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
+      "",
+      "  hocComponent.propTypes = {",
+      "  }",
+      "",
+      "  return hocComponent",
+      "}",
+      "",
+      "export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))",
+      ""
+    ]
+  },
+  "HOC": {
+    "prefix": "hoc",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "",
+      "export default (WrappedComponent) => {",
+      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
+      "",
+      "  hocComponent.propTypes = {",
+      "  }",
+      "",
+      "  return hocComponent",
+      "}",
+      ""
+    ]
+  },
   "Eslint Disable Line": {
     "prefix": "edl",
     "body": "// eslint-disable-line",
@@ -236,21 +293,6 @@
     "prefix": "cbl",
     "body": "// ============================================================"
   },
-  "GraphQL For Component": {
-    "prefix": "graphql",
-    "body": [
-      "import { compose, graphql } from 'react-apollo'",
-      ""
-    ]
-  },
-  "Export GraphQL": {
-    "prefix": "expgql",
-    "body": [
-      "export default compose(",
-      "  graphql(${1:queryOrMutation}, { name: ${2:name} }),",
-      ")(${3:ComponentName})"
-    ]
-  },
   "Import PropTypes": {
     "prefix": "impt",
     "body": [
@@ -423,51 +465,6 @@
       ""
     ]
   },
-  "HOC With Redux": {
-    "prefix": "hocredux",
-    "body": [
-      "import React from 'react'",
-      "import PropTypes from 'prop-types'",
-      "import { connect } from 'react-redux'",
-      "",
-      "export const mapStateToProps = state => ({",
-      "",
-      "})",
-      "",
-      "export const mapDispatchToProps = {",
-      " ",
-      "}",
-      "",
-      "export const ${1:hocComponentName} = (WrappedComponent) => {",
-      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
-      "",
-      "  hocComponent.propTypes = {",
-      "  }",
-      "",
-      "  return hocComponent",
-      "}",
-      "",
-      "export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))",
-      ""
-    ]
-  },
-  "HOC": {
-    "prefix": "hoc",
-    "body": [
-      "import React from 'react'",
-      "import PropTypes from 'prop-types'",
-      "",
-      "export default (WrappedComponent) => {",
-      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
-      "",
-      "  hocComponent.propTypes = {",
-      "  }",
-      "",
-      "  return hocComponent",
-      "}",
-      ""
-    ]
-  },
   "React Native Component": {
     "prefix": "rnc",
     "body": [
@@ -545,32 +542,19 @@
   },
   "Import React": {
     "prefix": "imr",
-    "body": [
-      "import React from 'react'",
-      ""
-    ]
+    "body": ["import React from 'react'", ""]
   },
   "Import React, { Component }": {
     "prefix": "imrc",
-    "body": [
-      "import React, { Component } from 'react'",
-      ""
-    ]
+    "body": ["import React, { Component } from 'react'", ""]
   },
   "Import React, { Component } & PropTypes": {
     "prefix": "imrcp",
-    "body": [
-      "import React, { Component } from 'react'",
-      "import PropTypes from 'prop-types'",
-      ""
-    ]
+    "body": ["import React, { Component } from 'react'", "import PropTypes from 'prop-types'", ""]
   },
   "Import React, { PureComponent }": {
     "prefix": "imrpc",
-    "body": [
-      "import React, { PureComponent } from 'react'",
-      ""
-    ]
+    "body": ["import React, { PureComponent } from 'react'", ""]
   },
   "Import React, { PureComponent } & PropTypes": {
     "prefix": "imrpcp",
@@ -797,99 +781,56 @@
       "}",
       ""
     ],
-    "description": "Adds a default constructor for it('', () => {})the class that contains props as arguments"
+    "description":
+      "Adds a default constructor for it('', () => {})the class that contains props as arguments"
   },
   "Empty State": {
     "prefix": "est",
-    "body": [
-      "this.state = {",
-      "  $1",
-      "}",
-      ""
-    ],
+    "body": ["this.state = {", "  $1", "}", ""],
     "description": "Creates empty state object. To be used in a constructor."
   },
   "Component Will Mount": {
     "prefix": "cwm",
-    "body": [
-      "componentWillMount = () => {",
-      "  $0",
-      "}",
-      ""
-    ],
-    "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+    "body": ["componentWillMount = () => {", "  $0", "}", ""],
+    "description":
+      "Invoked once, both on the client and server, immediately before the initial rendering occurs"
   },
   "Component Did Mount": {
     "prefix": "cdm",
-    "body": [
-      "componentDidMount = () => {",
-      "  $0",
-      "}",
-      ""
-    ],
-    "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
+    "body": ["componentDidMount = () => {", "  $0", "}", ""],
+    "description":
+      "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
   },
   "Component Will Receive Props": {
     "prefix": "cwr",
-    "body": [
-      "componentWillReceiveProps = (nextProps) => {",
-      "  $0",
-      "}",
-      ""
-    ],
-    "description": "Invoked when a component is receiving new props. This method is not called for the initial render."
+    "body": ["componentWillReceiveProps = (nextProps) => {", "  $0", "}", ""],
+    "description":
+      "Invoked when a component is receiving new props. This method is not called for the initial render."
   },
   "Should Component Update": {
     "prefix": "scu",
-    "body": [
-      "shouldComponentUpdate = (nextProps, nextState) => {",
-      "  $0",
-      "}",
-      ""
-    ],
+    "body": ["shouldComponentUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
     "description": "Invoked before rendering when new props or state are being received. "
   },
   "Component Will Update": {
     "prefix": "cwup",
-    "body": [
-      "componentWillUpdate = (nextProps, nextState) => {",
-      "  $0",
-      "}",
-      ""
-    ],
-    "description": "Invoked immediately before rendering when new props or state are being received."
+    "body": ["componentWillUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
+    "description":
+      "Invoked immediately before rendering when new props or state are being received."
   },
   "Component Did Update": {
     "prefix": "cdup",
-    "body": [
-      "componentDidUpdate = (prevProps, prevState) => {",
-      "  $0",
-      "}",
-      ""
-    ],
+    "body": ["componentDidUpdate = (prevProps, prevState) => {", "  $0", "}", ""],
     "description": "Invoked immediately after the component's updates are flushed to the DOM."
   },
   "Component Will Unmount": {
     "prefix": "cwun",
-    "body": [
-      "componentWillUnmount = () => {",
-      "  $0",
-      "}",
-      ""
-    ],
+    "body": ["componentWillUnmount = () => {", "  $0", "}", ""],
     "description": "Invoked immediately before a component is unmounted from the DOM."
   },
   "Component Render": {
     "prefix": "ren",
-    "body": [
-      "render() {",
-      "  return (",
-      "    <div>",
-      "      $0",
-      "    </div>",
-      "  )",
-      "}"
-    ],
+    "body": ["render() {", "  return (", "    <div>", "      $0", "    </div>", "  )", "}"],
     "description": "Basic render."
   },
   "Component Set State Object": {
@@ -899,10 +840,7 @@
   },
   "Component Set State Func": {
     "prefix": "ssf",
-    "body": [
-      "this.setState((state, props) => { return { $0 }})",
-      ""
-    ],
+    "body": ["this.setState((state, props) => { return { $0 }})", ""],
     "description": "Performs a shallow merge of nextState into current state"
   },
   "Component Props": {
@@ -916,10 +854,7 @@
   },
   "Import Redux Statement": {
     "prefix": "redux",
-    "body": [
-      "import { connect } from 'react-redux'",
-      ""
-    ]
+    "body": ["import { connect } from 'react-redux'", ""]
   },
   "Redux Pure Function": {
     "prefix": "rpf",
@@ -977,7 +912,8 @@
       "export default connect(mapStateToProps, mapDispatchToProps)(${1:componentName})",
       ""
     ],
-    "description": "Creates a React component class with PropTypes with connected redux and ES7 module system"
+    "description":
+      "Creates a React component class with PropTypes with connected redux and ES7 module system"
   },
   "Mapping To Props": {
     "prefix": "reduxmap",
@@ -1037,32 +973,17 @@
   },
   "Describe Block": {
     "prefix": "desc",
-    "body": [
-      "describe('$1', () => {",
-      "  $0",
-      "})",
-      ""
-    ],
+    "body": ["describe('$1', () => {", "  $0", "})", ""],
     "description": "Testing `describe` block"
   },
   "Test Block": {
     "prefix": "test",
-    "body": [
-      "test('should $1', () => {",
-      "  $0",
-      "})",
-      ""
-    ],
+    "body": ["test('should $1', () => {", "  $0", "})", ""],
     "description": "Testing `test` block"
   },
   "It Block": {
     "prefix": "tit",
-    "body": [
-      "it('should $1', () => {",
-      "  $0",
-      "})",
-      ""
-    ],
+    "body": ["it('should $1', () => {", "  $0", "})", ""],
     "description": "Testing `it` block"
   },
   "Setup Test": {
@@ -1155,5 +1076,38 @@
       "})",
       ""
     ]
+  },
+  "React Router Import": {
+    "prefix": "imrr",
+    "body": [
+      "import {",
+      "\tBrowserRouter as Router,",
+      "\tRoute",
+      "} from 'react-router-dom'\n"
+    ]
+  },
+  "React Router NavLink Import": {
+    "prefix": "imnl",
+    "body": "import { NavLink } from 'react-router-dom'\n"
+  },
+  "React Router With Router Import": {
+    "prefix": "imwr",
+    "body": "import { withRouter } from 'react-router-dom'"
+  },
+  "React Router Router": {
+    "prefix": "router",
+    "body": [
+      "<Router>",
+      "\t${0}",
+      "</Router>"
+    ]
+  },
+  "React Router Route": {
+    "prefix": "route",
+    "body": "<Route path='${1:path}' component={${2:component}}/>\n"
+  },
+  "React Router NavLink": {
+    "prefix": "navlink",
+    "body": "<NavLink to={${1:path}}>{$anchorText}</NavLink>\n"
   }
 }
