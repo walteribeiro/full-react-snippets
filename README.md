@@ -10,6 +10,8 @@ After install this snippets add this inside your settings
 
 ## Snippets List
 
+### ES7
+
 | Snippets | Content |
 | -------: | --------|
 | edl | Eslint Disable Line |
@@ -48,8 +50,18 @@ After install this snippets add this inside your settings
 | cm | Comment Block |
 | cmmb | Comment Big Block |
 | cbl | Comment Big Line |
+
+### GraphQL
+
+| Snippets | Content |
+| -------: | --------|
 | graphql | GraphQL For Component |
 | expgql | Export GraphQL |
+
+### Prop Types
+
+| Snippets | Content |
+| -------: | --------|
 | impt | Import PropTypes |
 | pta | Prop Type Array |
 | ptar | Prop Type Array Required |
@@ -80,12 +92,27 @@ After install this snippets add this inside your settings
 | ptsh | Prop Type Shape |
 | ptshr | Prop Type Shape Required |
 | ptypes | Static Prop Types |
+
+### HOC
+
+| Snippets | Content |
+| -------: | --------|
 | hocredux | HOC With Redux |
 | hoc | HOC |
+
+### React Native
+
+| Snippets | Content |
+| -------: | --------|
 | rnc | React Native Component |
 | rnce | React Native Component Export |
 | rncredux | React Native Class Component Redux |
 | imrn | React Native Import |
+
+### React
+
+| Snippets | Content |
+| -------: | --------|
 | imr | Import React |
 | imrc | Import React, { Component } |
 | imrcp | Import React, { Component } & PropTypes |
@@ -115,6 +142,11 @@ After install this snippets add this inside your settings
 | ssf | Component Set State Func |
 | props | Component Props |
 | state | Component State |
+
+### Redux
+
+| Snippets | Content |
+| -------: | --------|
 | redux | Import Redux Statement |
 | rpf | Redux Pure Function |
 | rpc | Redux Pure Function Const |
@@ -124,6 +156,22 @@ After install this snippets add this inside your settings
 | rxconst | Redux Const |
 | rxreducer | Redux Reducer |
 | rxselect | Redux Selector |
+
+### React Router
+
+| Snippets | Content |
+| -------: | --------|
+| imrr | import { BrowserRouter as Router, Route } from 'react-router-dom' |
+| imnl | import { NavLink } from 'react-router-dom' |
+| imwr | import { withRouter } from 'react-router' |
+| router | react-router Router template |
+| route | react-router Route component |
+| navlink | react-router NavLink component |
+
+### Testing
+
+| Snippets | Content |
+| -------: | --------|
 | desc | Describe Block |
 | test | Test Block |
 | tit | It Block |

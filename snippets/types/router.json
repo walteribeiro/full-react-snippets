@@ -1,0 +1,35 @@
+{
+  "React Router Import": {
+    "prefix": "imrr",
+    "body": [
+      "import {",
+      "\tBrowserRouter as Router,",
+      "\tRoute",
+      "} from 'react-router-dom'\n"
+    ]
+  },
+  "React Router NavLink Import": {
+    "prefix": "imnl",
+    "body": "import { NavLink } from 'react-router-dom'\n"
+  },
+  "React Router With Router Import": {
+    "prefix": "imwr",
+    "body": "import { withRouter } from 'react-router-dom'"
+  },
+  "React Router Router": {
+    "prefix": "router",
+    "body": [
+      "<Router>",
+      "\t${0}",
+      "</Router>"
+    ]
+  },
+  "React Router Route": {
+    "prefix": "route",
+    "body": "<Route path='${1:path}' component={${2:component}}/>\n"
+  },
+  "React Router NavLink": {
+    "prefix": "navlink",
+    "body": "<NavLink to={${1:path}}>{$anchorText}</NavLink>\n"
+  }
+}
