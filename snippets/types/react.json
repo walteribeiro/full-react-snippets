@@ -9,7 +9,11 @@
   },
   "Import React, { Component } & PropTypes": {
     "prefix": "imrcp",
-    "body": ["import React, { Component } from 'react'", "import PropTypes from 'prop-types'", ""]
+    "body": [
+      "import React, { Component } from 'react'",
+      "import PropTypes from 'prop-types'",
+      ""
+    ]
   },
   "Import React, { PureComponent }": {
     "prefix": "imrpc",
@@ -240,56 +244,134 @@
       "}",
       ""
     ],
-    "description":
-      "Adds a default constructor for it('', () => {})the class that contains props as arguments"
+    "description": "Adds a default constructor for it('', () => {}) the class that contains props as arguments"
   },
   "Empty State": {
     "prefix": "est",
     "body": ["this.state = {", "  $1", "}", ""],
     "description": "Creates empty state object. To be used in a constructor."
   },
-  "Component Will Mount": {
-    "prefix": "cwm",
-    "body": ["componentWillMount = () => {", "  $0", "}", ""],
-    "description":
-      "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+  "Get Derived State From Props": {
+    "prefix": "dsfp",
+    "body": [
+      "static getDerivedStateFromProps(props, state) {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Invoked right before calling the render method, both on the initial mount and on subsequent updates. It should return an object to update the state, or null to update nothing."
+  },
+  "Get Snapshot Before Update": {
+    "prefix": "sbu",
+    "body": [
+      "static getSnapshotBeforeUpdate(prevProps, prevState) {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Invoked right before the most recently rendered output is committed to e.g. the DOM. It enables your component to capture some information from the DOM (e.g. scroll position) before it is potentially changed."
+  },
+  "Component Did Catch": {
+    "prefix": "cdc",
+    "body": ["componentDidCatch(error, info) {", "  $0", "}", ""],
+    "description": "This lifecycle is invoked after an error has been thrown by a descendant component."
   },
   "Component Did Mount": {
     "prefix": "cdm",
-    "body": ["componentDidMount = () => {", "  $0", "}", ""],
-    "description":
-      "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
+    "body": ["componentDidMount() {", "  $0", "}", ""],
+    "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
   },
-  "Component Will Receive Props": {
-    "prefix": "cwr",
-    "body": ["componentWillReceiveProps = (nextProps) => {", "  $0", "}", ""],
-    "description":
-      "Invoked when a component is receiving new props. This method is not called for the initial render."
+  "Component Did Mount (Arrow func)": {
+    "prefix": "cdma",
+    "body": ["componentDidMount = () => {", "  $0", "}", ""],
+    "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
   },
   "Should Component Update": {
     "prefix": "scu",
-    "body": ["shouldComponentUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
+    "body": ["shouldComponentUpdate(nextProps, nextState) {", "  $0", "}", ""],
     "description": "Invoked before rendering when new props or state are being received. "
   },
-  "Component Will Update": {
-    "prefix": "cwup",
-    "body": ["componentWillUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
-    "description":
-      "Invoked immediately before rendering when new props or state are being received."
+  "Should Component Update (Arrow func)": {
+    "prefix": "scua",
+    "body": [
+      "shouldComponentUpdate = (nextProps, nextState) => {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Invoked before rendering when new props or state are being received. "
   },
   "Component Did Update": {
     "prefix": "cdup",
-    "body": ["componentDidUpdate = (prevProps, prevState) => {", "  $0", "}", ""],
+    "body": ["componentDidUpdate(prevProps, prevState) {", "  $0", "}", ""],
+    "description": "Invoked immediately after the component's updates are flushed to the DOM."
+  },
+  "Component Did Update (Arrow func)": {
+    "prefix": "cdupa",
+    "body": [
+      "componentDidUpdate = (prevProps, prevState) => {",
+      "  $0",
+      "}",
+      ""
+    ],
     "description": "Invoked immediately after the component's updates are flushed to the DOM."
   },
   "Component Will Unmount": {
     "prefix": "cwun",
+    "body": ["componentWillUnmount() {", "  $0", "}", ""],
+    "description": "Invoked immediately before a component is unmounted from the DOM."
+  },
+  "Component Will Unmount (Arrow func)": {
+    "prefix": "cwuna",
     "body": ["componentWillUnmount = () => {", "  $0", "}", ""],
     "description": "Invoked immediately before a component is unmounted from the DOM."
   },
+  "Component Will Mount - [Deprecated]": {
+    "prefix": "cwm",
+    "body": ["componentWillMount() {", "  $0", "}", ""],
+    "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+  },
+  "Component Will Mount (Arrow func) - [Deprecated]": {
+    "prefix": "cwma",
+    "body": ["componentWillMount = () => {", "  $0", "}", ""],
+    "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+  },
+  "Component Will Receive Props - [Deprecated]": {
+    "prefix": "cwr",
+    "body": ["componentWillReceiveProps(nextProps) {", "  $0", "}", ""],
+    "description": "Invoked when a component is receiving new props. This method is not called for the initial render."
+  },
+  "Component Will Receive Props (Arrow func) - [Deprecated]": {
+    "prefix": "cwra",
+    "body": ["componentWillReceiveProps = (nextProps) => {", "  $0", "}", ""],
+    "description": "Invoked when a component is receiving new props. This method is not called for the initial render."
+  },
+  "Component Will Update - [Deprecated]": {
+    "prefix": "cwup",
+    "body": ["componentWillUpdate(nextProps, nextState) {", "  $0", "}", ""],
+    "description": "Invoked immediately before rendering when new props or state are being received."
+  },
+  "Component Will Update (Arrow func) - [Deprecated]": {
+    "prefix": "cwupa",
+    "body": [
+      "componentWillUpdate = (nextProps, nextState) => {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Invoked immediately before rendering when new props or state are being received."
+  },
   "Component Render": {
     "prefix": "ren",
-    "body": ["render() {", "  return (", "    <div>", "      $0", "    </div>", "  )", "}"],
+    "body": [
+      "render() {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}"
+    ],
     "description": "Basic render."
   },
   "Component Set State Object": {

@@ -10,52 +10,257 @@
       "  graphql(${1:queryOrMutation}, { name: ${2:name} }),",
       ")(${3:ComponentName})"
     ]
-  },
-  "HOC With Redux": {
-    "prefix": "hocredux",
+  }
+,
+  "Import PropTypes": {
+    "prefix": "impt",
     "body": [
-      "import React from 'react'",
+      "import PropTypes from 'prop-types'"
+    ],
+    "description": "Import PropTypes"
+  },
+  "Prop Type Array": {
+    "prefix": "pta",
+    "body": "PropTypes.array,",
+    "description": "Array prop type"
+  },
+  "Prop Type Array Required": {
+    "prefix": "ptar",
+    "body": "PropTypes.array.isRequired,",
+    "description": "Array prop type required"
+  },
+  "Prop Type Bool": {
+    "prefix": "ptb",
+    "body": "PropTypes.bool,",
+    "description": "Bool prop type"
+  },
+  "Prop Type Bool Required": {
+    "prefix": "ptbr",
+    "body": "PropTypes.bool.isRequired,",
+    "description": "Bool prop type required"
+  },
+  "Prop Type Func": {
+    "prefix": "ptf",
+    "body": "PropTypes.func,",
+    "description": "Func prop type"
+  },
+  "Prop Type Func Required": {
+    "prefix": "ptfr",
+    "body": "PropTypes.func.isRequired,",
+    "description": "Func prop type required"
+  },
+  "Prop Type Number": {
+    "prefix": "ptn",
+    "body": "PropTypes.number,",
+    "description": "Number prop type"
+  },
+  "Prop Type Number Required": {
+    "prefix": "ptnr",
+    "body": "PropTypes.number.isRequired,",
+    "description": "Number prop type required"
+  },
+  "Prop Type Object": {
+    "prefix": "pto",
+    "body": "PropTypes.object,",
+    "description": "Object prop type"
+  },
+  "Prop Type Object Required": {
+    "prefix": "ptor",
+    "body": "PropTypes.object.isRequired,",
+    "description": "Object prop type required"
+  },
+  "Prop Type String": {
+    "prefix": "pts",
+    "body": "PropTypes.string,",
+    "description": "String prop type"
+  },
+  "Prop Type String Required": {
+    "prefix": "ptsr",
+    "body": "PropTypes.string.isRequired,",
+    "description": "String prop type required"
+  },
+  "Prop Type Node": {
+    "prefix": "ptnd",
+    "body": "PropTypes.node,",
+    "description": "Anything that can be rendered: numbers, strings, elements or an array"
+  },
+  "Prop Type Node Required": {
+    "prefix": "ptndr",
+    "body": "PropTypes.node.isRequired,",
+    "description": "Anything that can be rendered: numbers, strings, elements or an array required"
+  },
+  "Prop Type Element": {
+    "prefix": "ptel",
+    "body": "PropTypes.element,",
+    "description": "React element prop type"
+  },
+  "Prop Type Element Required": {
+    "prefix": "ptelr",
+    "body": "PropTypes.element.isRequired,",
+    "description": "React element prop type required"
+  },
+  "Prop Type Instance Of": {
+    "prefix": "pti",
+    "body": "PropTypes.instanceOf($0),",
+    "description": "Is an instance of a class prop type"
+  },
+  "Prop Type Instance Of Required": {
+    "prefix": "ptir",
+    "body": "PropTypes.instanceOf($0).isRequired,",
+    "description": "Is an instance of a class prop type required"
+  },
+  "Prop Type Enum": {
+    "prefix": "pte",
+    "body": "PropTypes.oneOf(['$0']),",
+    "description": "Prop type limited to specific values by treating it as an enum"
+  },
+  "Prop Type Enum Required": {
+    "prefix": "pter",
+    "body": "PropTypes.oneOf(['$0']).isRequired,",
+    "description": "Prop type limited to specific values by treating it as an enum required"
+  },
+  "Prop Type One Of Type": {
+    "prefix": "ptet",
+    "body": [
+      "PropTypes.oneOfType([",
+      "  $0",
+      "]),"
+    ],
+    "description": "An object that could be one of many types"
+  },
+  "Prop Type One Of Type Required": {
+    "prefix": "ptetr",
+    "body": [
+      "PropTypes.oneOfType([",
+      "  $0",
+      "]).isRequired,"
+    ],
+    "description": "An object that could be one of many types required"
+  },
+  "Prop Type Array Of": {
+    "prefix": "ptao",
+    "body": "PropTypes.arrayOf($0),",
+    "description": "An array of a certain type"
+  },
+  "Prop Type Array Of Required": {
+    "prefix": "ptaor",
+    "body": "PropTypes.arrayOf($0).isRequired,",
+    "description": "AcomponentNamen array of a certain type required"
+  },
+  "Prop Type Object Of": {
+    "prefix": "ptoo",
+    "body": "PropTypes.objectOf($0),",
+    "description": "An object with property values of a certain type"
+  },
+  "Prop Type Object Of Required": {
+    "prefix": "ptoor",
+    "body": "PropTypes.objectOf($0).isRequired,",
+    "description": "An object with property values of a certain type required"
+  },
+  "Prop Type Shape": {
+    "prefix": "ptsh",
+    "body": [
+      "PropTypes.shape({",
+      "  $0",
+      "}),"
+    ],
+    "description": "An object taking on a particular shape"
+  },
+  "Prop Type Shape Required": {
+    "prefix": "ptshr",
+    "body": [
+      "PropTypes.shape({",
+      "  $0",
+      "}).isRequired,"
+    ],
+    "description": "An object taking on a particular shape required"
+  },
+  "Static Prop Types": {
+    "prefix": "ptypes",
+    "body": [
+      "static propTypes = {",
+      "$0",
+      "}",
+      ""
+    ]
+  }
+,
+  "React Native Component": {
+    "prefix": "rnc",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import { Text, View } from 'react-native'",
+      "",
+      "export default class ${1:componentName} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    )",
+      "  }",
+      "}"
+    ]
+  },
+  "React Native Component Export": {
+    "prefix": "rnce",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import { Text, View } from 'react-native'",
+      "",
+      "export class ${1:componentName} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "export default ${1:componentName}"
+    ]
+  },
+  "React Native Class Component Redux": {
+    "prefix": "rncredux",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import { View, Text } from 'react-native'",
       "import PropTypes from 'prop-types'",
       "import { connect } from 'react-redux'",
       "",
-      "export const mapStateToProps = state => ({",
+      "export class ${1:componentName} extends Component {",
+      "  static propTypes = {",
+      "    ${2:prop}: ${3:PropTypes}",
+      "  }",
       "",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "const mapStateToProps = (state) => ({",
+      "  ",
       "})",
       "",
-      "export const mapDispatchToProps = {",
-      " ",
+      "const mapDispatchToProps = {",
+      "  ",
       "}",
       "",
-      "export const ${1:hocComponentName} = (WrappedComponent) => {",
-      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
-      "",
-      "  hocComponent.propTypes = {",
-      "  }",
-      "",
-      "  return hocComponent",
-      "}",
-      "",
-      "export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))",
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:componentName})",
       ""
-    ]
+    ],
+    "description": "Creates a React Native component class with PropTypes with connected redux and ES7 module system"
   },
-  "HOC": {
-    "prefix": "hoc",
-    "body": [
-      "import React from 'react'",
-      "import PropTypes from 'prop-types'",
-      "",
-      "export default (WrappedComponent) => {",
-      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
-      "",
-      "  hocComponent.propTypes = {",
-      "  }",
-      "",
-      "  return hocComponent",
-      "}",
-      ""
-    ]
-  },
+  "React Native Import": {
+    "prefix": "imrn",
+    "body": "import { ${1:moduleName} } from 'react-native'"
+  }
+,
   "Eslint Disable Line": {
     "prefix": "edl",
     "body": "// eslint-disable-line",
@@ -292,220 +497,227 @@
   "Comment Big Line": {
     "prefix": "cbl",
     "body": "// ============================================================"
-  },
-  "Import PropTypes": {
-    "prefix": "impt",
+  }
+,
+  "React Router Import": {
+    "prefix": "imrr",
     "body": [
-      "import PropTypes from 'prop-types'"
-    ],
-    "description": "Import PropTypes"
+      "import {",
+      "\tBrowserRouter as Router,",
+      "\tRoute",
+      "} from 'react-router-dom'\n"
+    ]
   },
-  "Prop Type Array": {
-    "prefix": "pta",
-    "body": "PropTypes.array,",
-    "description": "Array prop type"
+  "React Router NavLink Import": {
+    "prefix": "imnl",
+    "body": "import { NavLink } from 'react-router-dom'\n"
   },
-  "Prop Type Array Required": {
-    "prefix": "ptar",
-    "body": "PropTypes.array.isRequired,",
-    "description": "Array prop type required"
+  "React Router With Router Import": {
+    "prefix": "imwr",
+    "body": "import { withRouter } from 'react-router-dom'"
   },
-  "Prop Type Bool": {
-    "prefix": "ptb",
-    "body": "PropTypes.bool,",
-    "description": "Bool prop type"
-  },
-  "Prop Type Bool Required": {
-    "prefix": "ptbr",
-    "body": "PropTypes.bool.isRequired,",
-    "description": "Bool prop type required"
-  },
-  "Prop Type Func": {
-    "prefix": "ptf",
-    "body": "PropTypes.func,",
-    "description": "Func prop type"
-  },
-  "Prop Type Func Required": {
-    "prefix": "ptfr",
-    "body": "PropTypes.func.isRequired,",
-    "description": "Func prop type required"
-  },
-  "Prop Type Number": {
-    "prefix": "ptn",
-    "body": "PropTypes.number,",
-    "description": "Number prop type"
-  },
-  "Prop Type Number Required": {
-    "prefix": "ptnr",
-    "body": "PropTypes.number.isRequired,",
-    "description": "Number prop type required"
-  },
-  "Prop Type Object": {
-    "prefix": "pto",
-    "body": "PropTypes.object,",
-    "description": "Object prop type"
-  },
-  "Prop Type Object Required": {
-    "prefix": "ptor",
-    "body": "PropTypes.object.isRequired,",
-    "description": "Object prop type required"
-  },
-  "Prop Type String": {
-    "prefix": "pts",
-    "body": "PropTypes.string,",
-    "description": "String prop type"
-  },
-  "Prop Type String Required": {
-    "prefix": "ptsr",
-    "body": "PropTypes.string.isRequired,",
-    "description": "String prop type required"
-  },
-  "Prop Type Node": {
-    "prefix": "ptnd",
-    "body": "PropTypes.node,",
-    "description": "Anything that can be rendered: numbers, strings, elements or an array"
-  },
-  "Prop Type Node Required": {
-    "prefix": "ptndr",
-    "body": "PropTypes.node.isRequired,",
-    "description": "Anything that can be rendered: numbers, strings, elements or an array required"
-  },
-  "Prop Type Element": {
-    "prefix": "ptel",
-    "body": "PropTypes.element,",
-    "description": "React element prop type"
-  },
-  "Prop Type Element Required": {
-    "prefix": "ptelr",
-    "body": "PropTypes.element.isRequired,",
-    "description": "React element prop type required"
-  },
-  "Prop Type Instance Of": {
-    "prefix": "pti",
-    "body": "PropTypes.instanceOf($0),",
-    "description": "Is an instance of a class prop type"
-  },
-  "Prop Type Instance Of Required": {
-    "prefix": "ptir",
-    "body": "PropTypes.instanceOf($0).isRequired,",
-    "description": "Is an instance of a class prop type required"
-  },
-  "Prop Type Enum": {
-    "prefix": "pte",
-    "body": "PropTypes.oneOf(['$0']),",
-    "description": "Prop type limited to specific values by treating it as an enum"
-  },
-  "Prop Type Enum Required": {
-    "prefix": "pter",
-    "body": "PropTypes.oneOf(['$0']).isRequired,",
-    "description": "Prop type limited to specific values by treating it as an enum required"
-  },
-  "Prop Type One Of Type": {
-    "prefix": "ptet",
+  "React Router Router": {
+    "prefix": "router",
     "body": [
-      "PropTypes.oneOfType([",
-      "  $0",
-      "]),"
-    ],
-    "description": "An object that could be one of many types"
+      "<Router>",
+      "\t${0}",
+      "</Router>"
+    ]
   },
-  "Prop Type One Of Type Required": {
-    "prefix": "ptetr",
+  "React Router Route": {
+    "prefix": "route",
+    "body": "<Route path='${1:path}' component={${2:component}}/>\n"
+  },
+  "React Router NavLink": {
+    "prefix": "navlink",
+    "body": "<NavLink to={${1:path}}>{$anchorText}</NavLink>\n"
+  }
+,
+  "Describe Block": {
+    "prefix": "desc",
+    "body": ["describe('$1', () => {", "  $0", "})", ""],
+    "description": "Testing `describe` block"
+  },
+  "Test Block": {
+    "prefix": "test",
+    "body": ["test('should $1', () => {", "  $0", "})", ""],
+    "description": "Testing `test` block"
+  },
+  "It Block": {
+    "prefix": "tit",
+    "body": ["it('should $1', () => {", "  $0", "})", ""],
+    "description": "Testing `it` block"
+  },
+  "Setup Test": {
+    "prefix": "stest",
     "body": [
-      "PropTypes.oneOfType([",
-      "  $0",
-      "]).isRequired,"
-    ],
-    "description": "An object that could be one of many types required"
-  },
-  "Prop Type Array Of": {
-    "prefix": "ptao",
-    "body": "PropTypes.arrayOf($0),",
-    "description": "An array of a certain type"
-  },
-  "Prop Type Array Of Required": {
-    "prefix": "ptaor",
-    "body": "PropTypes.arrayOf($0).isRequired,",
-    "description": "AcomponentNamen array of a certain type required"
-  },
-  "Prop Type Object Of": {
-    "prefix": "ptoo",
-    "body": "PropTypes.objectOf($0),",
-    "description": "An object with property values of a certain type"
-  },
-  "Prop Type Object Of Required": {
-    "prefix": "ptoor",
-    "body": "PropTypes.objectOf($0).isRequired,",
-    "description": "An object with property values of a certain type required"
-  },
-  "Prop Type Shape": {
-    "prefix": "ptsh",
-    "body": [
-      "PropTypes.shape({",
-      "  $0",
-      "}),"
-    ],
-    "description": "An object taking on a particular shape"
-  },
-  "Prop Type Shape Required": {
-    "prefix": "ptshr",
-    "body": [
-      "PropTypes.shape({",
-      "  $0",
-      "}).isRequired,"
-    ],
-    "description": "An object taking on a particular shape required"
-  },
-  "Static Prop Types": {
-    "prefix": "ptypes",
-    "body": [
-      "static propTypes = {",
-      "$0",
-      "}",
+      "import { ${1:ComponentName}, mapStateToProps, mapDispatchToProps } from '../${1:ComponentName}'",
+      "",
+      "describe('<${1:ComponentName} />', () => {",
+      "  const defaultProps = {",
+      "",
+      "  }",
+      "",
+      "  const setup = buildSetup(${1:ComponentName}, defaultProps)",
+      "",
+      "  test('render', () => {",
+      "    expect(setup().wrapper).toMatchSnapshot()",
+      "  })",
+      "})",
       ""
     ]
   },
-  "React Native Component": {
-    "prefix": "rnc",
+  "Setup Test With Enzyme To Json": {
+    "prefix": "sjtest",
     "body": [
-      "import React, { Component } from 'react'",
-      "import { Text, View } from 'react-native'",
+      "import toJson from 'enzyme-to-json'",
+      "import { ${1:ComponentName}, mapStateToProps, mapDispatchToProps } from '../${1:ComponentName}'",
       "",
-      "export default class ${1:componentName} extends Component {",
-      "  render() {",
-      "    return (",
-      "      <View>",
-      "        <Text> ${2:textInComponent} </Text>",
-      "      </View>",
-      "    )",
+      "describe('<${1:ComponentName} />', () => {",
+      "  const defaultProps = {",
+      "",
       "  }",
+      "",
+      "  const setup = buildSetup(${1:ComponentName}, defaultProps)",
+      "",
+      "  test('render', () => {",
+      "    expect(toJson(setup().wrapper)).toMatchSnapshot()",
+      "  })",
+      "})",
+      ""
+    ]
+  },
+  "Setup React Native Test": {
+    "prefix": "sntest",
+    "body": [
+      "import 'react-native'",
+      "import React from 'react'",
+      "import renderer from 'react-test-renderer'",
+      "",
+      "import ${1:ComponentName} from '../${1:ComponentName}'",
+      "",
+      "describe('<${1:ComponentName} />', () => {",
+      "  const defaultProps = {",
+      "",
+      "  }",
+      "",
+      "  const wrapper = renderer.create(<${1:ComponentName,...defaultProps} />)",
+      "",
+      "  test('render', () => {",
+      "    expect(wrapper).toMatchSnapshot()",
+      "  })",
+      "})",
+      ""
+    ]
+  },
+  "Setup React Native Test With Redux": {
+    "prefix": "snrtest",
+    "body": [
+      "import 'react-native'",
+      "import React from 'react'",
+      "import renderer from 'react-test-renderer'",
+      "import { Provider } from 'react-redux'",
+      "",
+      "import store from 'src/store/configureStore'",
+      "import ${1:ComponentName} from '../${1:ComponentName}'",
+      "",
+      "describe('<${1:ComponentName} />', () => {",
+      "  const defaultProps = {",
+      "",
+      "  }",
+      "",
+      "  const wrapper = renderer.create(",
+      "    <Provider store={store}>",
+      "      <${1:ComponentName,...defaultProps} />",
+      "    </Provider>,",
+      "  )",
+      "",
+      "  test('render', () => {",
+      "    expect(wrapper).toMatchSnapshot()",
+      "  })",
+      "})",
+      ""
+    ]
+  }
+,
+  "HOC With Redux": {
+    "prefix": "hocredux",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "import { connect } from 'react-redux'",
+      "",
+      "export const mapStateToProps = state => ({",
+      "",
+      "})",
+      "",
+      "export const mapDispatchToProps = {",
+      " ",
+      "}",
+      "",
+      "export const ${1:hocComponentName} = (WrappedComponent) => {",
+      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
+      "",
+      "  hocComponent.propTypes = {",
+      "  }",
+      "",
+      "  return hocComponent",
+      "}",
+      "",
+      "export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))",
+      ""
+    ]
+  },
+  "HOC": {
+    "prefix": "hoc",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "",
+      "export default (WrappedComponent) => {",
+      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
+      "",
+      "  hocComponent.propTypes = {",
+      "  }",
+      "",
+      "  return hocComponent",
+      "}",
+      ""
+    ]
+  }
+,
+  "Import Redux Statement": {
+    "prefix": "redux",
+    "body": ["import { connect } from 'react-redux'", ""]
+  },
+  "Redux Pure Function": {
+    "prefix": "rpf",
+    "body": [
+      "export const $1 = '$1'",
+      "",
+      "export function $2($3) {",
+      "\treturn {",
+      "\t\ttype: $1,",
+      "\t\t$3",
+      "\t}",
       "}"
     ]
   },
-  "React Native Component Export": {
-    "prefix": "rnce",
+  "Redux Pure Function Const": {
+    "prefix": "rpc",
     "body": [
-      "import React, { Component } from 'react'",
-      "import { Text, View } from 'react-native'",
+      "export const $1 = '$1'",
       "",
-      "export class ${1:componentName} extends Component {",
-      "  render() {",
-      "    return (",
-      "      <View>",
-      "        <Text> ${2:textInComponent} </Text>",
-      "      </View>",
-      "    )",
-      "  }",
-      "}",
-      "",
-      "export default ${1:componentName}"
+      "export const $2 = $3 => ({",
+      "\ttype: $1,",
+      "\t$3",
+      "})"
     ]
   },
-  "React Native Class Component Redux": {
-    "prefix": "rncredux",
+  "React Class Compoment Redux": {
+    "prefix": "rcredux",
     "body": [
       "import React, { Component } from 'react'",
-      "import { View, Text } from 'react-native'",
       "import PropTypes from 'prop-types'",
       "import { connect } from 'react-redux'",
       "",
@@ -516,9 +728,9 @@
       "",
       "  render() {",
       "    return (",
-      "      <View>",
-      "        <Text> ${2:textInComponent} </Text>",
-      "      </View>",
+      "      <div>",
+      "        $0",
+      "      </div>",
       "    )",
       "  }",
       "}",
@@ -534,12 +746,66 @@
       "export default connect(mapStateToProps, mapDispatchToProps)(${1:componentName})",
       ""
     ],
-    "description": "Creates a React Native component class with PropTypes with connected redux and ES7 module system"
+    "description":
+      "Creates a React component class with PropTypes with connected redux and ES7 module system"
   },
-  "React Native Import": {
-    "prefix": "imrn",
-    "body": "import { ${1:moduleName} } from 'react-native'"
+  "Mapping To Props": {
+    "prefix": "reduxmap",
+    "body": [
+      "const mapStateToProps = (state) => ({",
+      "  ${1}",
+      "})",
+      "",
+      "const mapDispatchToProps = {",
+      "  ",
+      "}",
+      ""
+    ]
   },
+  "Redux Action": {
+    "prefix": "rxaction",
+    "body": [
+      "export const ${1:actionName} = (${2:param}) => ({",
+      "  type: ${3:type},",
+      "  payload: ${4:payload}",
+      "})",
+      ""
+    ]
+  },
+  "Redux Const": {
+    "prefix": "rxconst",
+    "body": "export const ${1:constantName} = '${1:constantName}'"
+  },
+  "Redux Reducer": {
+    "prefix": "rxreducer",
+    "body": [
+      "const initialState = {",
+      "",
+      "}",
+      "",
+      "export default (state = initialState, action) => {",
+      "  switch (action.type) {",
+      "",
+      "  case ${1:typeName}:",
+      "    return { ...state }",
+      "",
+      "  default:",
+      "    return state",
+      "  }",
+      "}",
+      ""
+    ]
+  },
+  "Redux Selector": {
+    "prefix": "rxselect",
+    "body": [
+      "import { createSelector } from 'reselect'",
+      "",
+      "export const ${1:selectorName} = state => state.${2:selector}",
+      ""
+    ]
+  }
+,
   "Import React": {
     "prefix": "imr",
     "body": ["import React from 'react'", ""]
@@ -550,7 +816,11 @@
   },
   "Import React, { Component } & PropTypes": {
     "prefix": "imrcp",
-    "body": ["import React, { Component } from 'react'", "import PropTypes from 'prop-types'", ""]
+    "body": [
+      "import React, { Component } from 'react'",
+      "import PropTypes from 'prop-types'",
+      ""
+    ]
   },
   "Import React, { PureComponent }": {
     "prefix": "imrpc",
@@ -781,56 +1051,134 @@
       "}",
       ""
     ],
-    "description":
-      "Adds a default constructor for it('', () => {})the class that contains props as arguments"
+    "description": "Adds a default constructor for it('', () => {}) the class that contains props as arguments"
   },
   "Empty State": {
     "prefix": "est",
     "body": ["this.state = {", "  $1", "}", ""],
     "description": "Creates empty state object. To be used in a constructor."
   },
-  "Component Will Mount": {
-    "prefix": "cwm",
-    "body": ["componentWillMount = () => {", "  $0", "}", ""],
-    "description":
-      "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+  "Get Derived State From Props": {
+    "prefix": "dsfp",
+    "body": [
+      "static getDerivedStateFromProps(props, state) {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Invoked right before calling the render method, both on the initial mount and on subsequent updates. It should return an object to update the state, or null to update nothing."
+  },
+  "Get Snapshot Before Update": {
+    "prefix": "sbu",
+    "body": [
+      "static getSnapshotBeforeUpdate(prevProps, prevState) {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Invoked right before the most recently rendered output is committed to e.g. the DOM. It enables your component to capture some information from the DOM (e.g. scroll position) before it is potentially changed."
+  },
+  "Component Did Catch": {
+    "prefix": "cdc",
+    "body": ["componentDidCatch(error, info) {", "  $0", "}", ""],
+    "description": "This lifecycle is invoked after an error has been thrown by a descendant component."
   },
   "Component Did Mount": {
     "prefix": "cdm",
-    "body": ["componentDidMount = () => {", "  $0", "}", ""],
-    "description":
-      "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
+    "body": ["componentDidMount() {", "  $0", "}", ""],
+    "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
   },
-  "Component Will Receive Props": {
-    "prefix": "cwr",
-    "body": ["componentWillReceiveProps = (nextProps) => {", "  $0", "}", ""],
-    "description":
-      "Invoked when a component is receiving new props. This method is not called for the initial render."
+  "Component Did Mount (Arrow func)": {
+    "prefix": "cdma",
+    "body": ["componentDidMount = () => {", "  $0", "}", ""],
+    "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
   },
   "Should Component Update": {
     "prefix": "scu",
-    "body": ["shouldComponentUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
+    "body": ["shouldComponentUpdate(nextProps, nextState) {", "  $0", "}", ""],
     "description": "Invoked before rendering when new props or state are being received. "
   },
-  "Component Will Update": {
-    "prefix": "cwup",
-    "body": ["componentWillUpdate = (nextProps, nextState) => {", "  $0", "}", ""],
-    "description":
-      "Invoked immediately before rendering when new props or state are being received."
+  "Should Component Update (Arrow func)": {
+    "prefix": "scua",
+    "body": [
+      "shouldComponentUpdate = (nextProps, nextState) => {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Invoked before rendering when new props or state are being received. "
   },
   "Component Did Update": {
     "prefix": "cdup",
-    "body": ["componentDidUpdate = (prevProps, prevState) => {", "  $0", "}", ""],
+    "body": ["componentDidUpdate(prevProps, prevState) {", "  $0", "}", ""],
+    "description": "Invoked immediately after the component's updates are flushed to the DOM."
+  },
+  "Component Did Update (Arrow func)": {
+    "prefix": "cdupa",
+    "body": [
+      "componentDidUpdate = (prevProps, prevState) => {",
+      "  $0",
+      "}",
+      ""
+    ],
     "description": "Invoked immediately after the component's updates are flushed to the DOM."
   },
   "Component Will Unmount": {
     "prefix": "cwun",
+    "body": ["componentWillUnmount() {", "  $0", "}", ""],
+    "description": "Invoked immediately before a component is unmounted from the DOM."
+  },
+  "Component Will Unmount (Arrow func)": {
+    "prefix": "cwuna",
     "body": ["componentWillUnmount = () => {", "  $0", "}", ""],
     "description": "Invoked immediately before a component is unmounted from the DOM."
   },
+  "Component Will Mount - [Deprecated]": {
+    "prefix": "cwm",
+    "body": ["componentWillMount() {", "  $0", "}", ""],
+    "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+  },
+  "Component Will Mount (Arrow func) - [Deprecated]": {
+    "prefix": "cwma",
+    "body": ["componentWillMount = () => {", "  $0", "}", ""],
+    "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+  },
+  "Component Will Receive Props - [Deprecated]": {
+    "prefix": "cwr",
+    "body": ["componentWillReceiveProps(nextProps) {", "  $0", "}", ""],
+    "description": "Invoked when a component is receiving new props. This method is not called for the initial render."
+  },
+  "Component Will Receive Props (Arrow func) - [Deprecated]": {
+    "prefix": "cwra",
+    "body": ["componentWillReceiveProps = (nextProps) => {", "  $0", "}", ""],
+    "description": "Invoked when a component is receiving new props. This method is not called for the initial render."
+  },
+  "Component Will Update - [Deprecated]": {
+    "prefix": "cwup",
+    "body": ["componentWillUpdate(nextProps, nextState) {", "  $0", "}", ""],
+    "description": "Invoked immediately before rendering when new props or state are being received."
+  },
+  "Component Will Update (Arrow func) - [Deprecated]": {
+    "prefix": "cwupa",
+    "body": [
+      "componentWillUpdate = (nextProps, nextState) => {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Invoked immediately before rendering when new props or state are being received."
+  },
   "Component Render": {
     "prefix": "ren",
-    "body": ["render() {", "  return (", "    <div>", "      $0", "    </div>", "  )", "}"],
+    "body": [
+      "render() {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}"
+    ],
     "description": "Basic render."
   },
   "Component Set State Object": {
@@ -851,263 +1199,5 @@
   "Component State": {
     "prefix": "state",
     "body": "this.state.$0"
-  },
-  "Import Redux Statement": {
-    "prefix": "redux",
-    "body": ["import { connect } from 'react-redux'", ""]
-  },
-  "Redux Pure Function": {
-    "prefix": "rpf",
-    "body": [
-      "export const $1 = '$1'",
-      "",
-      "export function $2($3) {",
-      "\treturn {",
-      "\t\ttype: $1,",
-      "\t\t$3",
-      "\t}",
-      "}"
-    ]
-  },
-  "Redux Pure Function Const": {
-    "prefix": "rpc",
-    "body": [
-      "export const $1 = '$1'",
-      "",
-      "export const $2 = $3 => ({",
-      "\ttype: $1,",
-      "\t$3",
-      "})"
-    ]
-  },
-  "React Class Compoment Redux": {
-    "prefix": "rcredux",
-    "body": [
-      "import React, { Component } from 'react'",
-      "import PropTypes from 'prop-types'",
-      "import { connect } from 'react-redux'",
-      "",
-      "export class ${1:componentName} extends Component {",
-      "  static propTypes = {",
-      "    ${2:prop}: ${3:PropTypes}",
-      "  }",
-      "",
-      "  render() {",
-      "    return (",
-      "      <div>",
-      "        $0",
-      "      </div>",
-      "    )",
-      "  }",
-      "}",
-      "",
-      "const mapStateToProps = (state) => ({",
-      "  ",
-      "})",
-      "",
-      "const mapDispatchToProps = {",
-      "  ",
-      "}",
-      "",
-      "export default connect(mapStateToProps, mapDispatchToProps)(${1:componentName})",
-      ""
-    ],
-    "description":
-      "Creates a React component class with PropTypes with connected redux and ES7 module system"
-  },
-  "Mapping To Props": {
-    "prefix": "reduxmap",
-    "body": [
-      "const mapStateToProps = (state) => ({",
-      "  ${1}",
-      "})",
-      "",
-      "const mapDispatchToProps = {",
-      "  ",
-      "}",
-      ""
-    ]
-  },
-  "Redux Action": {
-    "prefix": "rxaction",
-    "body": [
-      "export const ${1:actionName} = (${2:param}) => ({",
-      "  type: ${3:type},",
-      "  payload: ${4:payload}",
-      "})",
-      ""
-    ]
-  },
-  "Redux Const": {
-    "prefix": "rxconst",
-    "body": "export const ${1:constantName} = '${1:constantName}'"
-  },
-  "Redux Reducer": {
-    "prefix": "rxreducer",
-    "body": [
-      "const initialState = {",
-      "",
-      "}",
-      "",
-      "export default (state = initialState, action) => {",
-      "  switch (action.type) {",
-      "",
-      "  case ${1:typeName}:",
-      "    return { ...state }",
-      "",
-      "  default:",
-      "    return state",
-      "  }",
-      "}",
-      ""
-    ]
-  },
-  "Redux Selector": {
-    "prefix": "rxselect",
-    "body": [
-      "import { createSelector } from 'reselect'",
-      "",
-      "export const ${1:selectorName} = state => state.${2:selector}",
-      ""
-    ]
-  },
-  "Describe Block": {
-    "prefix": "desc",
-    "body": ["describe('$1', () => {", "  $0", "})", ""],
-    "description": "Testing `describe` block"
-  },
-  "Test Block": {
-    "prefix": "test",
-    "body": ["test('should $1', () => {", "  $0", "})", ""],
-    "description": "Testing `test` block"
-  },
-  "It Block": {
-    "prefix": "tit",
-    "body": ["it('should $1', () => {", "  $0", "})", ""],
-    "description": "Testing `it` block"
-  },
-  "Setup Test": {
-    "prefix": "stest",
-    "body": [
-      "import { ${1:ComponentName}, mapStateToProps, mapDispatchToProps } from '../${1:ComponentName}'",
-      "",
-      "describe('<${1:ComponentName} />', () => {",
-      "  const defaultProps = {",
-      "",
-      "  }",
-      "",
-      "  const setup = buildSetup(${1:ComponentName}, defaultProps)",
-      "",
-      "  test('render', () => {",
-      "    expect(setup().wrapper).toMatchSnapshot()",
-      "  })",
-      "})",
-      ""
-    ]
-  },
-  "Setup Test With Enzyme To Json": {
-    "prefix": "sjtest",
-    "body": [
-      "import toJson from 'enzyme-to-json'",
-      "import { ${1:ComponentName}, mapStateToProps, mapDispatchToProps } from '../${1:ComponentName}'",
-      "",
-      "describe('<${1:ComponentName} />', () => {",
-      "  const defaultProps = {",
-      "",
-      "  }",
-      "",
-      "  const setup = buildSetup(${1:ComponentName}, defaultProps)",
-      "",
-      "  test('render', () => {",
-      "    expect(toJson(setup().wrapper)).toMatchSnapshot()",
-      "  })",
-      "})",
-      ""
-    ]
-  },
-  "Setup React Native Test": {
-    "prefix": "sntest",
-    "body": [
-      "import 'react-native'",
-      "import React from 'react'",
-      "import renderer from 'react-test-renderer'",
-      "",
-      "import ${1:ComponentName} from '../${1:ComponentName}'",
-      "",
-      "describe('<${1:ComponentName} />', () => {",
-      "  const defaultProps = {",
-      "",
-      "  }",
-      "",
-      "  const wrapper = renderer.create(<${1:ComponentName,...defaultProps} />)",
-      "",
-      "  test('render', () => {",
-      "    expect(wrapper).toMatchSnapshot()",
-      "  })",
-      "})",
-      ""
-    ]
-  },
-  "Setup React Native Test With Redux": {
-    "prefix": "snrtest",
-    "body": [
-      "import 'react-native'",
-      "import React from 'react'",
-      "import renderer from 'react-test-renderer'",
-      "import { Provider } from 'react-redux'",
-      "",
-      "import store from 'src/store/configureStore'",
-      "import ${1:ComponentName} from '../${1:ComponentName}'",
-      "",
-      "describe('<${1:ComponentName} />', () => {",
-      "  const defaultProps = {",
-      "",
-      "  }",
-      "",
-      "  const wrapper = renderer.create(",
-      "    <Provider store={store}>",
-      "      <${1:ComponentName,...defaultProps} />",
-      "    </Provider>,",
-      "  )",
-      "",
-      "  test('render', () => {",
-      "    expect(wrapper).toMatchSnapshot()",
-      "  })",
-      "})",
-      ""
-    ]
-  },
-  "React Router Import": {
-    "prefix": "imrr",
-    "body": [
-      "import {",
-      "\tBrowserRouter as Router,",
-      "\tRoute",
-      "} from 'react-router-dom'\n"
-    ]
-  },
-  "React Router NavLink Import": {
-    "prefix": "imnl",
-    "body": "import { NavLink } from 'react-router-dom'\n"
-  },
-  "React Router With Router Import": {
-    "prefix": "imwr",
-    "body": "import { withRouter } from 'react-router-dom'"
-  },
-  "React Router Router": {
-    "prefix": "router",
-    "body": [
-      "<Router>",
-      "\t${0}",
-      "</Router>"
-    ]
-  },
-  "React Router Route": {
-    "prefix": "route",
-    "body": "<Route path='${1:path}' component={${2:component}}/>\n"
-  },
-  "React Router NavLink": {
-    "prefix": "navlink",
-    "body": "<NavLink to={${1:path}}>{$anchorText}</NavLink>\n"
   }
 }
