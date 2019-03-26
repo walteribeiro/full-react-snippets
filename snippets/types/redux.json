@@ -34,7 +34,7 @@
       "import PropTypes from 'prop-types'",
       "import { connect } from 'react-redux'",
       "",
-      "export class ${1:componentName} extends Component {",
+      "class ${1:componentName} extends Component {",
       "  static propTypes = {",
       "    ${2:prop}: ${3:PropTypes}",
       "  }",
@@ -59,8 +59,7 @@
       "export default connect(mapStateToProps, mapDispatchToProps)(${1:componentName})",
       ""
     ],
-    "description":
-      "Creates a React component class with PropTypes with connected redux and ES7 module system"
+    "description": "Creates a React component class with PropTypes with connected redux and ES7 module system"
   },
   "Mapping To Props": {
     "prefix": "reduxmap",

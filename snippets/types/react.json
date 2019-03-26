@@ -50,7 +50,7 @@
     "body": [
       "import React, { Component } from 'react'",
       "",
-      "export class ${1:componentName} extends Component {",
+      "class ${1:componentName} extends Component {",
       "  render() {",
       "    return (",
       "      <div>",
@@ -149,7 +149,7 @@
       "import React, { Component } from 'react'",
       "import PropTypes from 'prop-types'",
       "",
-      "export class ${1:componentName} extends Component {",
+      "class ${1:componentName} extends Component {",
       "  static propTypes = {",
       "",
       "  }",
