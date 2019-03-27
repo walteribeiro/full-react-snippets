@@ -189,3 +189,18 @@ After install this snippets add this inside your settings
 |   sjtest | Setup Test With Enzyme To Json     |
 |   sntest | Setup React Native Test            |
 |  snrtest | Setup React Native Test With Redux |
+
+### Hooks
+
+|            Snippets | Content                  |
+| ------------------: | ------------------------ |
+|            useState | useState Hook            |
+|           useEffect | useEffect Hook           |
+|          useContext | useContext Hook          |
+|          useReducer | useReducer Hook          |
+|         useCallback | useCallback Hook         |
+|             useMemo | useMemo Hook             |
+|              useRef | useRef Hook              |
+| useImperativeHandle | useImperativeHandle Hook |
+|     useLayoutEffect | useLayoutEffect Hook     |
+|       useDebugValue | useDebugValue Hook       |
