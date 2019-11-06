@@ -2,6 +2,29 @@
 [![Install](https://vsmarketplacebadge.apphb.com/installs-short/walter-ribeiro.full-react-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=walter-ribeiro.full-react-snippets)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/walter-ribeiro.full-react-snippets.svg)](https://marketplace.visualstudio.com/items?itemName=walter-ribeiro.full-react-snippets)
 
+<!-- TABLE OF CONTENTS -->
+
+# Table of Contents
+
+- [Usage](#usage)
+- [Snippets List](#snippets-list)
+  - [ES7](#eS7)
+  - [GraphQL](#graphQL)
+  - [PropTypes](#proptypes)
+  - [HOC](#hOC)
+  - [React Native](#react-native)
+  - [React](#react)
+  - [Redux](#redux)
+  - [React Router](#react-router)
+  - [Testing](#testing)
+  - [Hooks](#hooks)  
+  - [Reactotron](#reactotron)  
+  - [Styled Components](#styled-components)  
+  - [Others](#others)  
+- [License](#license)
+- [Contact](#contact)
+
+
 ## Usage
 
 After install this snippets add this inside your settings
@@ -58,7 +81,7 @@ After install this snippets add this inside your settings
 |  graphql | GraphQL For Component |
 |   expgql | Export GraphQL        |
 
-### Prop Types
+### PropTypes
 
 | Snippets | Content                        |
 | -------: | ------------------------------ |
@@ -102,56 +125,58 @@ After install this snippets add this inside your settings
 
 ### React Native
 
-| Snippets | Content                            |
-| -------: | ---------------------------------- |
-|      rnc | React Native Component             |
-|     rnce | React Native Component Export      |
-| rncredux | React Native Class Component Redux |
-|     imrn | React Native Import                |
+| Snippets | Content                                     |
+| -------: | ------------------------------------------- |
+|      rnc | React Native Component                      |
+|     rnce | React Native Component Export               |
+| rncredux | React Native Class Component Redux          |
+|     rnfc | React Native Functional Component **`New`** |
+|     imrn | React Native Import                         |
+|  rnstyle | React Native Style **`New`**                |
 
 ### React
 
-| Snippets | Content                                                                  |
-| -------: | ------------------------------------------------------------------------ |
-|      imr | Import React                                                             |
-|     imrc | Import React, { Component }                                              |
-|    imrcp | Import React, { Component } & PropTypes                                  |
-|    imrpc | Import React, { PureComponent }                                          |
-|   imrpcp | Import React, { PureComponent } & PropTypes                              |
-|      rcc | React Class Compoment                                                    |
-|      rce | React Class Export Component                                             |
-|      rfe | React Functional Export Component                                        |
-|     rfep | React Functional Export Component With PropTypes                         |
-|      rfc | React Functional Component                                               |
-|     rfcp | React Functional Component With PropTypes                                |
-|     rcep | React Class Export Component With PropTypes                              |
-|      rpc | React Class Pure Component                                               |
-|     rpcp | React Class Pure Component With PropTypes                                |
-|     rccp | React Class Compoment PropTypes                                          |
-|   rconst | Class Constructor                                                        |
-|      est | Empty State                                                              |
-|     dsfp | Get Derived State From Props **`New`**                                   |
-|      sbu | Get Snapshot Before Update **`New`**                                     |
-|      cdc | Component Did Catch **`New`**                                            |
-|      cdm | Component Did Mount **`Updated`**                                        |
-|     cdma | Component Did Mount (Arrow func) **`Updated`**                           |
-|      scu | Should Component Update **`Updated`**                                    |
-|     scua | Should Component Update (Arrow func) **`Updated`**                       |
-|     cdup | Component Did Update **`Updated`**                                       |
-|    cdupa | Component Did Update (Arrow func) **`Updated`**                          |
-|     cwun | Component Will Unmount **`Updated`**                                     |
-|    cwuna | Component Will Unmount (Arrow func) **`Updated`**                        |
-|      cwm | Component Will Mount \[Deprecated\] **`Updated`**                        |
-|     cwma | Component Will Mount (Arrow func) - \[Deprecated\] **`Updated`**         |
-|      cwr | Component Will Receive Props \[Deprecated\] **`Updated`**                |
-|     cwra | Component Will Receive Props (Arrow func) - \[Deprecated\] **`Updated`** |
-|     cwup | Component Will Update \[Deprecated\] **`Updated`**                       |
-|    cwupa | Component Will Update (Arrow func) - \[Deprecated\] **`Updated`**        |
-|      ren | Component Render                                                         |
-|      sst | Component Set State Object                                               |
-|      ssf | Component Set State Func                                                 |
-|    props | Component Props                                                          |
-|    state | Component State                                                          |
+| Snippets | Content                                                        |
+| -------: | -------------------------------------------------------------- |
+|      imr | Import React                                                   |
+|     imrc | Import React, { Component }                                    |
+|    imrcp | Import React, { Component } & PropTypes                        |
+|    imrpc | Import React, { PureComponent }                                |
+|   imrpcp | Import React, { PureComponent } & PropTypes                    |
+|      rcc | React Class Compoment                                          |
+|      rce | React Class Export Component                                   |
+|      rfe | React Functional Export Component                              |
+|     rfep | React Functional Export Component With PropTypes               |
+|      rfc | React Functional Component **`Updated`**                       |
+|     rfcp | React Functional Component With PropTypes **`Updated`**        |
+|     rcep | React Class Export Component With PropTypes                    |
+|      rpc | React Class Pure Component                                     |
+|     rpcp | React Class Pure Component With PropTypes                      |
+|     rccp | React Class Compoment PropTypes                                |
+|   rconst | Class Constructor                                              |
+|      est | Empty State                                                    |
+|     dsfp | Get Derived State From Props                                   |
+|      sbu | Get Snapshot Before Update                                     |
+|      cdc | Component Did Catch                                            |
+|      cdm | Component Did Mount                                            |
+|     cdma | Component Did Mount (Arrow func)                               |
+|      scu | Should Component Update                                        |
+|     scua | Should Component Update (Arrow func)                           |
+|     cdup | Component Did Update                                           |
+|    cdupa | Component Did Update (Arrow func)                              |
+|     cwun | Component Will Unmount                                         |
+|    cwuna | Component Will Unmount (Arrow func)                            |
+|      cwm | Component Will Mount ***[Deprecated]***                        |
+|     cwma | Component Will Mount (Arrow func) - ***[Deprecated]***         |
+|      cwr | Component Will Receive Props ***[Deprecated]***                |
+|     cwra | Component Will Receive Props (Arrow func) - ***[Deprecated]*** |
+|     cwup | Component Will Update ***[Deprecated]***                       |
+|    cwupa | Component Will Update (Arrow func) - ***[Deprecated]***        |
+|      ren | Component Render                                               |
+|      sst | Component Set State Object                                     |
+|      ssf | Component Set State Func                                       |
+|    props | Component Props                                                |
+|    state | Component State                                                |
 
 ### Redux
 
@@ -204,3 +229,44 @@ After install this snippets add this inside your settings
 | useImperativeHandle | useImperativeHandle Hook |
 |     useLayoutEffect | useLayoutEffect Hook     |
 |       useDebugValue | useDebugValue Hook       |
+
+### Reactotron
+
+|      Snippets | Content                                            |
+| ------------: | -------------------------------------------------- |
+|        tron-r | Reactotron Config React **`New`**                  |
+|  tron-redux-r | Reactotron Redux Config for React **`New`**        |
+|       tron-rn | Reactotron Config for React Native **`New`**       |
+| tron-redux-rn | Reactotron Redux Config for React Native **`New`** |
+|           ctl | Reactotron Console Log **`New`**                   |
+|           ctw | Reactotron Console Warn **`New`**                  |
+|           cte | Reactotron Console Error **`New`**                 |
+
+### Styled Components
+
+|  Snippets | Content                                           |
+| --------: | ------------------------------------------------- |
+|  styled-r | Styled Components File for React **`New`**        |
+| styled-rn | Styled Components File for React Native **`New`** |
+|       stc | Styled Component **`New`**                        |
+
+### Others
+
+|     Snippets | Content                    |
+| -----------: | -------------------------- |
+|          api | Axios API **`New`**        |
+| root-reducer | Root Reducer **`New`**     |
+|    root-saga | Root Saga **`New`**        |
+|    root-saga | Root Saga **`New`**        |
+|         duck | Duck **`New`**             |
+|       rsduck | Redux Sauce Duck **`New`** |
+|           cs | Create Store **`New`**     |
+
+
+## License
+
+Distributed under the MIT license. See `LICENSE` for more information.
+
+## Contact
+
+Walter Ribeiro - [Github](https://github.com/walteribeiro) - **walterjunioranalise@gmail.com**

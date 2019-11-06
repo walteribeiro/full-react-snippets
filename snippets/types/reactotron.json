@@ -1,0 +1,104 @@
+{
+  "Reactotron Config React": {
+    "prefix": "tron-r",
+    "body": [
+      "import Reactotron from 'reactotron-react-js';",
+      "",
+      "if (process.env.NODE_ENV === 'development') {",
+      "  const tron = Reactotron.configure().connect();",
+      "",
+      "  tron.clear();",
+      "",
+      "  console.tron = tron;",
+      "}",
+      ""
+    ],
+    "description": "Create ReactJS Reactotron Config"
+  },
+  "Reactotron Redux Config for React": {
+    "prefix": "tron-redux-r",
+    "body": [
+      "import Reactotron from 'reactotron-react-js';",
+      "import { reactotronRedux } from 'reactotron-redux';",
+      "import sagaPlugin from 'reactotron-redux-saga';",
+      "",
+      "if (__DEV__) {",
+      "  const tron = Reactotron.configure()",
+      "    .use(reactotronRedux())",
+      "    .use(sagaPlugin())",
+      "    .connect();",
+      "",
+      "  tron.clear();",
+      "",
+      "  console.tron = tron;",
+      "}",
+      ""
+    ],
+    "description": "Create ReactJS Reactotron Config with Redux and Redux Saga"
+  },
+  "Reactotron Config for React Native": {
+    "prefix": "tron-rn",
+    "body": [
+      "import Reactotron from 'reactotron-react-native';",
+      "",
+      "if (__DEV__) {",
+      "  const tron = Reactotron",
+      "    .configure()",
+      "    .useReactNative()",
+      "    .connect();",
+      "",
+      "  tron.clear();",
+      "",
+      "  console.tron = tron;",
+      "}",
+      ""
+    ],
+    "description": "Create React Native Reactotron Config"
+  },
+  "Reactotron Redux Config for React Native": {
+    "prefix": "tron-redux-rn",
+    "body": [
+      "import Reactotron from 'reactotron-react-native';",
+      "import { reactotronRedux } from 'reactotron-redux';",
+      "import sagaPlugin from 'reactotron-redux-saga';",
+      "",
+      "if (__DEV__) {",
+      "  const tron = Reactotron.configure()",
+      "    .useReactNative()",
+      "    .use(reactotronRedux())",
+      "    .use(sagaPlugin())",
+      "    .connect();",
+      "",
+      "  tron.clear();",
+      "",
+      "  console.tron = tron;",
+      "}",
+      ""
+    ],
+    "description": "Create React Native Reactotron Config with Redux and Redux Saga"
+  },
+  "Reactotron Console Log": {
+    "prefix": "ctl",
+    "body": [
+      "console.tron.log('$1');",
+      ""
+    ],
+    "description": "Useful and Fast way to add a console.tron.log and continue your proccess"
+  },
+  "Reactotron Console Warn": {
+    "prefix": "ctw",
+    "body": [
+      "console.tron.warn('$1');",
+      ""
+    ],
+    "description": "Useful and Fast way to add a console.tron.warn and continue your proccess"
+  },
+  "Reactotron Console Error": {
+    "prefix": "cte",
+    "body": [
+      "console.tron.error('$1');",
+      ""
+    ],
+    "description": "Useful and Fast way to add a console.tron.error and continue your proccess"
+  }
+}

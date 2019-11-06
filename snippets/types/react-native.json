@@ -70,8 +70,27 @@
     ],
     "description": "Creates a React Native component class with PropTypes with connected redux and ES7 module system"
   },
+  "React Native Functional Component": {
+    "prefix": "rnfc",
+    "body": [
+      "import React from 'react';",
+      "import { View } from 'react-native';",
+      "",
+      "export default function ${1:componentName}() {",
+      "  return (",
+      "    <View />",
+      "  );",
+      "}",
+      ""
+    ],
+    "description": "Creates a React Native functional component"
+  },
   "React Native Import": {
     "prefix": "imrn",
     "body": "import { ${1:moduleName} } from 'react-native'"
+  },
+  "React Native Style": {
+    "prefix": "rnstyle",
+    "body": "const styles = StyleSheet.create({})"
   }
 }

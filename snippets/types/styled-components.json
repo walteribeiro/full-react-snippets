@@ -1,0 +1,31 @@
+{
+  "Styled Components File for React": {
+    "prefix": "styled-r",
+    "body": [
+      "import styled from 'styled-components';",
+      "",
+      "export const ${1:Container} = styled.${2:div}`",
+      "  ${3}",
+      "`;",
+      ""
+    ],
+    "description": "Create ReactJS Styled Components file"
+  },
+  "Styled Component File for React Native": {
+    "prefix": "styled-rn",
+    "body": [
+      "import styled from 'styled-components/native';",
+      "",
+      "export const ${1:Container} = styled.${2:View}`",
+      "  ${3}",
+      "`;",
+      ""
+    ],
+    "description": "Create React Native Styled Components file"
+  },
+  "Styled Component": {
+    "prefix": "stc",
+    "body": ["export const $1 = styled.$2`", "  $3", "`", ""],
+    "description": "Create Styled Component"
+  }
+}

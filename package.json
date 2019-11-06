@@ -2,7 +2,7 @@
   "name": "full-react-snippets",
   "displayName": "Full React/React Native/React Router/Redux/GraphQL/ES7/Testing/PropTypes snippets",
   "description": "Code snippets for React/React Native/React Router/Redux/GraphQL/ES7/Testing/PropTypes",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "icon": "images/logo.png",
   "publisher": "walter-ribeiro",
   "repository": {
@@ -24,7 +24,9 @@
     "react-router",
     "Redux",
     "GraphQL",
-    "React Hooks"
+    "React Hooks",
+    "Reactotron",
+    "styled components"
   ],
   "contributes": {
     "snippets": [

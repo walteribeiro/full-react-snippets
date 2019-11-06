@@ -1,0 +1,131 @@
+{
+  "Axios API": {
+    "prefix": "api",
+    "body": [
+      "import axios from 'axios';",
+      "",
+      "const api = axios.create({",
+      "  baseURL: '${1}',",
+      "});",
+      "",
+      "export default api;",
+      ""
+    ],
+    "description": "Create Axios Configuration file"
+  },
+  "Root Reducer": {
+    "prefix": "root-reducer",
+    "body": [
+      "import { combineReducers } from 'redux';",
+      "",
+      "const reducers = combineReducers({",
+      "  example: () => [],",
+      "});",
+      "",
+      "export default reducers;",
+      ""
+    ],
+    "description": "Create Ducks index.js file"
+  },
+  "Root Saga": {
+    "prefix": "root-saga",
+    "body": [
+      "import { all } from 'redux-saga/effects';",
+      "",
+      "export default function* rootSaga() {",
+      "  yield all([]);",
+      "}",
+      ""
+    ],
+    "description": "Create Sagas index.js file"
+  },
+  "Duck": {
+    "prefix": "duck",
+    "body": [
+      "import Immutable from 'seamless-immutable';",
+      "",
+      "export const Types = {${1}};",
+      "",
+      "const INITIAL_STATE = Immutable({${2}});",
+      "",
+      "export default function ${3:functionName}(state = INITIAL_STATE, action) {",
+      "  switch (action.type) {",
+      "    ${4}",
+      "    default:",
+      "      return state;",
+      "  }",
+      "}",
+      "",
+      "export const Creators = {${5}};",
+      ""
+    ],
+    "description": "Create React Native Duck Module"
+  },
+  "Redux Sauce Duck": {
+    "prefix": "rsduck",
+    "body": [
+      "import { createReducer, createActions } from 'reduxsauce';",
+      "import Immutable from 'seamless-immutable';",
+      "",
+      "/* Types & Action Creators */",
+      "",
+      "const { Types, Creators } = createActions({",
+      "// actionType: ['dataPassed'],",
+      "});",
+      "",
+      "export const ${1:typeName}Types = Types;",
+      "export default Creators;",
+      "",
+      "/* Initial State */",
+      "",
+      "export const INITIAL_STATE = Immutable({",
+      "// data: [],",
+      "});",
+      "",
+      "/* Reducers */",
+      "",
+      "// export const reducer = state =>",
+      "//   state.merge({ data: [] });",
+      "",
+      "/* Reducers to types */",
+      "",
+      "export const reducer = createReducer(INITIAL_STATE, {",
+      "// [Types.ACTION_TYPE]: reducer,",
+      "});",
+      ""
+    ],
+    "description": "Create ReactJS Duck Module with Reduxsauce"
+  },
+  "Create Store": {
+    "prefix": "cs",
+    "body": [
+      "import { createStore, compose, applyMiddleware } from 'redux';",
+      "import createSagaMiddleware from 'redux-saga';",
+      "",
+      "import reducers from './ducks';",
+      "import sagas from './sagas';",
+      "",
+      "const middlewares = [];",
+      "",
+      "const sagaMonitor = process.env.NODE_ENV === 'development' ? console.tron.createSagaMonitor() : null;",
+      "",
+      "const sagaMiddleware = createSagaMiddleware({ sagaMonitor });",
+      "",
+      "middlewares.push(sagaMiddleware);",
+      "",
+      "const composer = process.env.NODE_ENV === 'development'",
+      "  ? compose(",
+      "    applyMiddleware(...middlewares),",
+      "    console.tron.createEnhancer(),",
+      "  )",
+      "  : compose(applyMiddleware(...middlewares));",
+      "",
+      "const store = createStore(reducers, composer);",
+      "",
+      "sagaMiddleware.run(sagas);",
+      "",
+      "export default store;"
+    ],
+    "description": "Create Store index.js file"
+  }
+}
