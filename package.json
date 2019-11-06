@@ -1,7 +1,7 @@
 {
   "name": "full-react-snippets",
-  "displayName": "Full React/React Native/React Router/Redux/GraphQL/ES7/Testing/PropTypes snippets",
-  "description": "Code snippets for React/React Native/React Router/Redux/GraphQL/ES7/Testing/PropTypes",
+  "displayName": "Fullstack React/React Native snippets",
+  "description": "Code snippets for React/React Native and extra libs",
   "version": "1.4.0",
   "icon": "images/logo.png",
   "publisher": "walter-ribeiro",
