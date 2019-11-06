@@ -250,6 +250,52 @@
     ]
   }
 ,
+  "HOC With Redux": {
+    "prefix": "hocredux",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "import { connect } from 'react-redux'",
+      "",
+      "export const mapStateToProps = state => ({",
+      "",
+      "})",
+      "",
+      "export const mapDispatchToProps = {",
+      " ",
+      "}",
+      "",
+      "export const ${1:hocComponentName} = (WrappedComponent) => {",
+      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
+      "",
+      "  hocComponent.propTypes = {",
+      "  }",
+      "",
+      "  return hocComponent",
+      "}",
+      "",
+      "export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))",
+      ""
+    ]
+  },
+  "HOC": {
+    "prefix": "hoc",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "",
+      "export default (WrappedComponent) => {",
+      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
+      "",
+      "  hocComponent.propTypes = {",
+      "  }",
+      "",
+      "  return hocComponent",
+      "}",
+      ""
+    ]
+  }
+,
   "useState": {
     "prefix": "useState",
     "body": [
@@ -359,59 +405,13 @@
     "description": "Can be used to display a label for custom hooks in React DevTools."
   }
 ,
-  "HOC With Redux": {
-    "prefix": "hocredux",
-    "body": [
-      "import React from 'react'",
-      "import PropTypes from 'prop-types'",
-      "import { connect } from 'react-redux'",
-      "",
-      "export const mapStateToProps = state => ({",
-      "",
-      "})",
-      "",
-      "export const mapDispatchToProps = {",
-      " ",
-      "}",
-      "",
-      "export const ${1:hocComponentName} = (WrappedComponent) => {",
-      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
-      "",
-      "  hocComponent.propTypes = {",
-      "  }",
-      "",
-      "  return hocComponent",
-      "}",
-      "",
-      "export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))",
-      ""
-    ]
-  },
-  "HOC": {
-    "prefix": "hoc",
-    "body": [
-      "import React from 'react'",
-      "import PropTypes from 'prop-types'",
-      "",
-      "export default (WrappedComponent) => {",
-      "  const hocComponent = ({ ...props }) => <WrappedComponent {...props} />",
-      "",
-      "  hocComponent.propTypes = {",
-      "  }",
-      "",
-      "  return hocComponent",
-      "}",
-      ""
-    ]
-  }
-,
   "Axios API": {
     "prefix": "api",
     "body": [
       "import axios from 'axios';",
       "",
       "const api = axios.create({",
-      "  baseURL: ${1},",
+      "  baseURL: '${1}',",
       "});",
       "",
       "export default api;",
@@ -479,7 +479,7 @@
       "// actionType: ['dataPassed'],",
       "});",
       "",
-      "export const ${1:${TM_FILENAME_BASE/(.*)$/${1:/capitalize}/}}Types = Types;",
+      "export const ${1:typeName}Types = Types;",
       "export default Creators;",
       "",
       "/* Initial State */",
@@ -533,101 +533,6 @@
       "export default store;"
     ],
     "description": "Create Store index.js file"
-  }
-,
-  "React Native Component": {
-    "prefix": "rnc",
-    "body": [
-      "import React, { Component } from 'react'",
-      "import { Text, View } from 'react-native'",
-      "",
-      "export default class ${1:componentName} extends Component {",
-      "  render() {",
-      "    return (",
-      "      <View>",
-      "        <Text> ${2:textInComponent} </Text>",
-      "      </View>",
-      "    )",
-      "  }",
-      "}"
-    ]
-  },
-  "React Native Component Export": {
-    "prefix": "rnce",
-    "body": [
-      "import React, { Component } from 'react'",
-      "import { Text, View } from 'react-native'",
-      "",
-      "class ${1:componentName} extends Component {",
-      "  render() {",
-      "    return (",
-      "      <View>",
-      "        <Text> ${2:textInComponent} </Text>",
-      "      </View>",
-      "    )",
-      "  }",
-      "}",
-      "",
-      "export default ${1:componentName}"
-    ]
-  },
-  "React Native Class Component Redux": {
-    "prefix": "rncredux",
-    "body": [
-      "import React, { Component } from 'react'",
-      "import { View, Text } from 'react-native'",
-      "import PropTypes from 'prop-types'",
-      "import { connect } from 'react-redux'",
-      "",
-      "class ${1:componentName} extends Component {",
-      "  static propTypes = {",
-      "    ${2:prop}: ${3:PropTypes}",
-      "  }",
-      "",
-      "  render() {",
-      "    return (",
-      "      <View>",
-      "        <Text> ${2:textInComponent} </Text>",
-      "      </View>",
-      "    )",
-      "  }",
-      "}",
-      "",
-      "const mapStateToProps = (state) => ({",
-      "  ",
-      "})",
-      "",
-      "const mapDispatchToProps = {",
-      "  ",
-      "}",
-      "",
-      "export default connect(mapStateToProps, mapDispatchToProps)(${1:componentName})",
-      ""
-    ],
-    "description": "Creates a React Native component class with PropTypes with connected redux and ES7 module system"
-  },
-  "React Native Functional Component": {
-    "prefix": "rnfc",
-    "body": [
-      "import React from 'react';",
-      "import { View } from 'react-native';",
-      "",
-      "export default function ${1:componentName}() {",
-      "  return (",
-      "    <View />",
-      "  );",
-      "}",
-      ""
-    ],
-    "description": "Creates a React Native functional component"
-  },
-  "React Native Import": {
-    "prefix": "imrn",
-    "body": "import { ${1:moduleName} } from 'react-native'"
-  },
-  "React Native Style": {
-    "prefix": "rnstyle",
-    "body": "const styles = StyleSheet.create({})"
   }
 ,
   "Import PropTypes": {
@@ -803,6 +708,101 @@
     ]
   }
 ,
+  "React Native Component": {
+    "prefix": "rnc",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import { Text, View } from 'react-native'",
+      "",
+      "export default class ${1:componentName} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    )",
+      "  }",
+      "}"
+    ]
+  },
+  "React Native Component Export": {
+    "prefix": "rnce",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import { Text, View } from 'react-native'",
+      "",
+      "class ${1:componentName} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "export default ${1:componentName}"
+    ]
+  },
+  "React Native Class Component Redux": {
+    "prefix": "rncredux",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import { View, Text } from 'react-native'",
+      "import PropTypes from 'prop-types'",
+      "import { connect } from 'react-redux'",
+      "",
+      "class ${1:componentName} extends Component {",
+      "  static propTypes = {",
+      "    ${2:prop}: ${3:PropTypes}",
+      "  }",
+      "",
+      "  render() {",
+      "    return (",
+      "      <View>",
+      "        <Text> ${2:textInComponent} </Text>",
+      "      </View>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "const mapStateToProps = (state) => ({",
+      "  ",
+      "})",
+      "",
+      "const mapDispatchToProps = {",
+      "  ",
+      "}",
+      "",
+      "export default connect(mapStateToProps, mapDispatchToProps)(${1:componentName})",
+      ""
+    ],
+    "description": "Creates a React Native component class with PropTypes with connected redux and ES7 module system"
+  },
+  "React Native Functional Component": {
+    "prefix": "rnfc",
+    "body": [
+      "import React from 'react';",
+      "import { View } from 'react-native';",
+      "",
+      "export default function ${1:componentName}() {",
+      "  return (",
+      "    <View />",
+      "  );",
+      "}",
+      ""
+    ],
+    "description": "Creates a React Native functional component"
+  },
+  "React Native Import": {
+    "prefix": "imrn",
+    "body": "import { ${1:moduleName} } from 'react-native'"
+  },
+  "React Native Style": {
+    "prefix": "rnstyle",
+    "body": "const styles = StyleSheet.create({})"
+  }
+,
   "Reactotron Config React": {
     "prefix": "tron-r",
     "body": [
@@ -868,6 +868,7 @@
       "",
       "if (__DEV__) {",
       "  const tron = Reactotron.configure()",
+      "    .useReactNative()",
       "    .use(reactotronRedux())",
       "    .use(sagaPlugin())",
       "    .connect();",
@@ -903,6 +904,40 @@
       ""
     ],
     "description": "Useful and Fast way to add a console.tron.error and continue your proccess"
+  }
+,
+  "React Router Import": {
+    "prefix": "imrr",
+    "body": [
+      "import {",
+      "\tBrowserRouter as Router,",
+      "\tRoute",
+      "} from 'react-router-dom'\n"
+    ]
+  },
+  "React Router NavLink Import": {
+    "prefix": "imnl",
+    "body": "import { NavLink } from 'react-router-dom'\n"
+  },
+  "React Router With Router Import": {
+    "prefix": "imwr",
+    "body": "import { withRouter } from 'react-router-dom'"
+  },
+  "React Router Router": {
+    "prefix": "router",
+    "body": [
+      "<Router>",
+      "\t${0}",
+      "</Router>"
+    ]
+  },
+  "React Router Route": {
+    "prefix": "route",
+    "body": "<Route path='${1:path}' component={${2:component}}/>\n"
+  },
+  "React Router NavLink": {
+    "prefix": "navlink",
+    "body": "<NavLink to={${1:path}}>{$anchorText}</NavLink>\n"
   }
 ,
   "Import Redux Statement": {
@@ -1054,40 +1089,6 @@
     "description": "Create Styled Component"
   }
 ,
-  "React Router Import": {
-    "prefix": "imrr",
-    "body": [
-      "import {",
-      "\tBrowserRouter as Router,",
-      "\tRoute",
-      "} from 'react-router-dom'\n"
-    ]
-  },
-  "React Router NavLink Import": {
-    "prefix": "imnl",
-    "body": "import { NavLink } from 'react-router-dom'\n"
-  },
-  "React Router With Router Import": {
-    "prefix": "imwr",
-    "body": "import { withRouter } from 'react-router-dom'"
-  },
-  "React Router Router": {
-    "prefix": "router",
-    "body": [
-      "<Router>",
-      "\t${0}",
-      "</Router>"
-    ]
-  },
-  "React Router Route": {
-    "prefix": "route",
-    "body": "<Route path='${1:path}' component={${2:component}}/>\n"
-  },
-  "React Router NavLink": {
-    "prefix": "navlink",
-    "body": "<NavLink to={${1:path}}>{$anchorText}</NavLink>\n"
-  }
-,
   "Describe Block": {
     "prefix": "desc",
     "body": ["describe('$1', () => {", "  $0", "})", ""],
@@ -1193,5 +1194,400 @@
       "})",
       ""
     ]
+  }
+,
+  "Import React": {
+    "prefix": "imr",
+    "body": ["import React from 'react'", ""]
+  },
+  "Import React, { Component }": {
+    "prefix": "imrc",
+    "body": ["import React, { Component } from 'react'", ""]
+  },
+  "Import React, { Component } & PropTypes": {
+    "prefix": "imrcp",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import PropTypes from 'prop-types'",
+      ""
+    ]
+  },
+  "Import React, { PureComponent }": {
+    "prefix": "imrpc",
+    "body": ["import React, { PureComponent } from 'react'", ""]
+  },
+  "Import React, { PureComponent } & PropTypes": {
+    "prefix": "imrpcp",
+    "body": [
+      "import React, { PureComponent } from 'react'",
+      "import PropTypes from 'prop-types'",
+      ""
+    ]
+  },
+  "React Class Compoment": {
+    "prefix": "rcc",
+    "body": [
+      "import React, { Component } from 'react'",
+      "",
+      "export default class ${1:componentName} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <>",
+      "        $0",
+      "      </>",
+      "    )",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Creates a React component class with ES7 module system"
+  },
+  "React Class Export Component": {
+    "prefix": "rce",
+    "body": [
+      "import React, { Component } from 'react'",
+      "",
+      "class ${1:componentName} extends Component {",
+      "  render() {",
+      "    return (",
+      "      <>",
+      "        $0",
+      "      </>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "export default ${1:componentName}",
+      ""
+    ],
+    "description": "Creates a React component class with ES7 module system"
+  },
+  "React Functional Export Component": {
+    "prefix": "rfe",
+    "body": [
+      "import React from 'react'",
+      "",
+      "const ${1:componentName} = () => {",
+      "  return (",
+      "    <>",
+      "      $0",
+      "    </>",
+      "  )",
+      "}",
+      "",
+      "export default ${1:componentName}",
+      ""
+    ],
+    "description": "Creates a React Functional Component with ES7 module system"
+  },
+  "React Functional Export Component With PropTypes": {
+    "prefix": "rfep",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "",
+      "const ${1:componentName} = () => {",
+      "  return (",
+      "    <>",
+      "      $0",
+      "    </>",
+      "  )",
+      "}",
+      "",
+      "${1:componentName}.propTypes = {",
+      "",
+      "}",
+      "",
+      "export default ${1:componentName}",
+      ""
+    ],
+    "description": "Creates a React Functional Component with ES7 module system with PropTypes"
+  },
+  "React Functional Component": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "export default function ${1:componentName}() {",
+      "  return (",
+      "    <>",
+      "    $0",
+      "    </>",
+      "  );",
+      "}",
+      ""
+    ],
+    "description": "Creates a React Functional Component with ES7 module system"
+  },
+  "React Functional Component With PropTypes": {
+    "prefix": "rfcp",
+    "body": [
+      "import React from 'react'",
+      "import PropTypes from 'prop-types'",
+      "",
+      "export default function ${1:componentName}() {",
+      "  return (",
+      "    <>",
+      "    $0",
+      "    </>",
+      "  );",
+      "}",
+      "",
+      "${1:componentName}.propTypes = {",
+      "",
+      "}",
+      ""
+    ],
+    "description": "Creates a React Functional Component with ES7 module system with PropTypes"
+  },
+  "React Class Export Component With PropTypes": {
+    "prefix": "rcep",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import PropTypes from 'prop-types'",
+      "",
+      "class ${1:componentName} extends Component {",
+      "  static propTypes = {",
+      "",
+      "  }",
+      "",
+      "  render() {",
+      "    return (",
+      "      <>",
+      "        $0",
+      "      </>",
+      "    )",
+      "  }",
+      "}",
+      "",
+      "export default ${1:componentName}",
+      ""
+    ],
+    "description": "Creates a React component class with ES7 module system"
+  },
+  "React Class Pure Component": {
+    "prefix": "rpc",
+    "body": [
+      "import React, { PureComponent } from 'react'",
+      "",
+      "export default class ${1:componentName} extends PureComponent {",
+      "  render() {",
+      "    return (",
+      "      <>",
+      "        $0",
+      "      </>",
+      "    )",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Creates a React component class with ES7 module system"
+  },
+  "React Class Pure Component With PropTypes": {
+    "prefix": "rpcp",
+    "body": [
+      "import React, { PureComponent } from 'react'",
+      "import PropTypes from 'prop-types'",
+      "",
+      "export default class ${1:componentName} extends PureComponent {",
+      "  static propTypes = {",
+      "",
+      "  }",
+      "",
+      "  render() {",
+      "    return (",
+      "      <>",
+      "        $0",
+      "      </>",
+      "    )",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Creates a React component class with ES7 module system"
+  },
+  "React Class Compoment PropTypes": {
+    "prefix": "rccp",
+    "body": [
+      "import React, { Component } from 'react'",
+      "import PropTypes from 'prop-types'",
+      "",
+      "export default class ${1:componentName} extends Component {",
+      "  static propTypes = {",
+      "    ${2:prop}: ${3:PropTypes}",
+      "  }",
+      "",
+      "  render() {",
+      "    return (",
+      "      <>",
+      "        $0",
+      "      </>",
+      "    )",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Creates a React component class with PropTypes and ES7 module system"
+  },
+  "Class Constructor": {
+    "prefix": "rconst",
+    "body": [
+      "constructor(props) {",
+      "  super(props)",
+      "",
+      "  this.state = {",
+      "     $0",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Adds a default constructor for it('', () => {}) the class that contains props as arguments"
+  },
+  "Empty State": {
+    "prefix": "est",
+    "body": ["this.state = {", "  $1", "}", ""],
+    "description": "Creates empty state object. To be used in a constructor."
+  },
+  "Get Derived State From Props": {
+    "prefix": "dsfp",
+    "body": [
+      "static getDerivedStateFromProps(props, state) {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Invoked right before calling the render method, both on the initial mount and on subsequent updates. It should return an object to update the state, or null to update nothing."
+  },
+  "Get Snapshot Before Update": {
+    "prefix": "sbu",
+    "body": [
+      "static getSnapshotBeforeUpdate(prevProps, prevState) {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Invoked right before the most recently rendered output is committed to e.g. the DOM. It enables your component to capture some information from the DOM (e.g. scroll position) before it is potentially changed."
+  },
+  "Component Did Catch": {
+    "prefix": "cdc",
+    "body": ["componentDidCatch(error, info) {", "  $0", "}", ""],
+    "description": "This lifecycle is invoked after an error has been thrown by a descendant component."
+  },
+  "Component Did Mount": {
+    "prefix": "cdm",
+    "body": ["componentDidMount() {", "  $0", "}", ""],
+    "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
+  },
+  "Component Did Mount (Arrow func)": {
+    "prefix": "cdma",
+    "body": ["componentDidMount = () => {", "  $0", "}", ""],
+    "description": "Invoked once, only on the client (not on the server), immediately after the initial rendering occurs."
+  },
+  "Should Component Update": {
+    "prefix": "scu",
+    "body": ["shouldComponentUpdate(nextProps, nextState) {", "  $0", "}", ""],
+    "description": "Invoked before rendering when new props or state are being received. "
+  },
+  "Should Component Update (Arrow func)": {
+    "prefix": "scua",
+    "body": [
+      "shouldComponentUpdate = (nextProps, nextState) => {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Invoked before rendering when new props or state are being received. "
+  },
+  "Component Did Update": {
+    "prefix": "cdup",
+    "body": ["componentDidUpdate(prevProps, prevState) {", "  $0", "}", ""],
+    "description": "Invoked immediately after the component's updates are flushed to the DOM."
+  },
+  "Component Did Update (Arrow func)": {
+    "prefix": "cdupa",
+    "body": [
+      "componentDidUpdate = (prevProps, prevState) => {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Invoked immediately after the component's updates are flushed to the DOM."
+  },
+  "Component Will Unmount": {
+    "prefix": "cwun",
+    "body": ["componentWillUnmount() {", "  $0", "}", ""],
+    "description": "Invoked immediately before a component is unmounted from the DOM."
+  },
+  "Component Will Unmount (Arrow func)": {
+    "prefix": "cwuna",
+    "body": ["componentWillUnmount = () => {", "  $0", "}", ""],
+    "description": "Invoked immediately before a component is unmounted from the DOM."
+  },
+  "Component Will Mount - [Deprecated]": {
+    "prefix": "cwm",
+    "body": ["componentWillMount() {", "  $0", "}", ""],
+    "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+  },
+  "Component Will Mount (Arrow func) - [Deprecated]": {
+    "prefix": "cwma",
+    "body": ["componentWillMount = () => {", "  $0", "}", ""],
+    "description": "Invoked once, both on the client and server, immediately before the initial rendering occurs"
+  },
+  "Component Will Receive Props - [Deprecated]": {
+    "prefix": "cwr",
+    "body": ["componentWillReceiveProps(nextProps) {", "  $0", "}", ""],
+    "description": "Invoked when a component is receiving new props. This method is not called for the initial render."
+  },
+  "Component Will Receive Props (Arrow func) - [Deprecated]": {
+    "prefix": "cwra",
+    "body": ["componentWillReceiveProps = (nextProps) => {", "  $0", "}", ""],
+    "description": "Invoked when a component is receiving new props. This method is not called for the initial render."
+  },
+  "Component Will Update - [Deprecated]": {
+    "prefix": "cwup",
+    "body": ["componentWillUpdate(nextProps, nextState) {", "  $0", "}", ""],
+    "description": "Invoked immediately before rendering when new props or state are being received."
+  },
+  "Component Will Update (Arrow func) - [Deprecated]": {
+    "prefix": "cwupa",
+    "body": [
+      "componentWillUpdate = (nextProps, nextState) => {",
+      "  $0",
+      "}",
+      ""
+    ],
+    "description": "Invoked immediately before rendering when new props or state are being received."
+  },
+  "Component Render": {
+    "prefix": "ren",
+    "body": [
+      "render() {",
+      "  return (",
+      "    <>",
+      "      $0",
+      "    </>",
+      "  )",
+      "}"
+    ],
+    "description": "Basic render."
+  },
+  "Component Set State Object": {
+    "prefix": "sst",
+    "body": "this.setState({$0})",
+    "description": "Performs a shallow merge of nextState into current state"
+  },
+  "Component Set State Func": {
+    "prefix": "ssf",
+    "body": ["this.setState((state, props) => { return { $0 }})", ""],
+    "description": "Performs a shallow merge of nextState into current state"
+  },
+  "Component Props": {
+    "prefix": "props",
+    "body": "this.props.$0",
+    "description": "Access component's props"
+  },
+  "Component State": {
+    "prefix": "state",
+    "body": "this.state.$0"
   }
 }
