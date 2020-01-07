@@ -1,3 +1,10 @@
+## [1.4.1 - Release]
+
+### Bugfix
+
+- Remove jsx language from `contributes.snippets` in package.json (Issue #2)
+- Update React Native Functional Component - `rnfc` (Issue #1)
+
 ## [1.4.0 - Release]
 
 ### Include and update commands

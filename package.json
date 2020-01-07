@@ -2,7 +2,7 @@
   "name": "full-react-snippets",
   "displayName": "Fullstack React/React Native snippets",
   "description": "Code snippets for React/React Native and extra libs",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "icon": "images/logo.png",
   "publisher": "walter-ribeiro",
   "repository": {
@@ -44,10 +44,6 @@
       },
       {
         "language": "typescriptreact",
-        "path": "./snippets/snippets.json"
-      },
-      {
-        "language": "jsx",
         "path": "./snippets/snippets.json"
       }
     ]

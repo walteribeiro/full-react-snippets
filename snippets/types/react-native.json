@@ -78,7 +78,9 @@
       "",
       "export default function ${1:componentName}() {",
       "  return (",
-      "    <View />",
+      "    <View>",
+      "      <Text>$0</Text>",
+      "     </View>",
       "  );",
       "}",
       ""
