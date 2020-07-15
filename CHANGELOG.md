@@ -1,3 +1,9 @@
+## [1.4.2 - Release]
+
+### Bugfix
+
+- Update React Native Functional Component import - `rnfc` (PR #4)
+
 ## [1.4.1 - Release]
 
 ### Bugfix
